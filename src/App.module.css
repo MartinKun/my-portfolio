@@ -1,0 +1,8 @@
+.app {
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--color-primary);
+  font-family: var(--font-family-main);
+  line-height: 1.6;
+}

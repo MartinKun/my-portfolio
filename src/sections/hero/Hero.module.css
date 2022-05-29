@@ -1,0 +1,196 @@
+.presentation {
+  position: relative;
+  margin-top: 17.4rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+
+  font-size: 4.5rem;
+}
+
+.presentation a{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2em;
+}
+
+.presentation h1 {
+  font-family: var(--font-family-sub2);
+  font-size: 1em;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.presentation h1 span {
+  font-family: var(--font-family-sub2);
+  color: #0979b0;
+}
+
+.presentation h2 {
+  font-family: var(--font-family-sub2);
+  font-size: 0.45em;
+  color: var(--color-primary);
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+.presentation h2 span {
+  color: #0979b0;
+}
+
+.presentation p {
+  margin-top: 12px;
+  width: 40rem;
+  font-size: 0.45em;
+  color: var(--color-primary);
+  font-family: var(--font-family-sub);
+  letter-spacing: 2px;
+  font-weight: 400;
+}
+
+.presentation p span {
+  color: var(--color-secondary);
+}
+
+.contactMeBtn {
+  width: 200px;
+  margin-top: 4rem;
+  font-family: var(--font-family-btns);
+  font-weight: 500;
+  letter-spacing: 3px;
+  outline: none;
+  background-color: transparent;
+  border: 1px var(--color-secondary) solid;
+  color: var(--color-primary);
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  overflow: hidden;
+  transition: 0.3s;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.contactMeBtn:hover {
+  color: #09203f;
+  font-weight: 800;
+}
+
+.contactMeBtn::before {
+  left: -5%;
+  right: auto;
+  bottom: auto;
+  width: 110%;
+  height: 195%;
+  transform-origin: left bottom;
+  transform: skewY(-10deg) scale(1, 0);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  content: "";
+  background: var(--color-secondary);
+  transition: transform 0.3s;
+}
+.contactMeBtn:hover::before {
+  transform-origin: left top;
+  transform: skewY(-10deg) scale(1, 1);
+}
+
+.contactMeBtn i {
+  font-size: 1.3em;
+  font-style: normal;
+  margin-right: 7px;
+}
+
+.contactMe {
+  font-size: 0.18em;
+  width: 200px;
+  margin-top: 4rem;
+  font-family: var(--font-family-btns);
+  font-weight: 500;
+  letter-spacing: 3px;
+  outline: none;
+  background-color: transparent;
+  border: 1px var(--color-secondary) solid;
+  color: var(--color-primary);
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  overflow: hidden;
+  transition: 0.3s;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+}
+
+.contactMe {
+  text-align: center;
+}
+
+.contactMe:hover {
+  color: #09203f;
+  font-weight: 800;
+}
+
+.contactMe i {
+  font-size: 1.3em;
+  font-style: normal;
+  margin-right: 7px;
+}
+
+.contactMe::before {
+  left: -5%;
+  right: auto;
+  bottom: auto;
+  width: 110%;
+  height: 195%;
+  transform-origin: left bottom;
+  transform: skewY(-10deg) scale(1, 0);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  content: "";
+  background: var(--color-secondary);
+  transition: transform 0.3s;
+}
+.contactMe:hover::before {
+  transform-origin: left top;
+  transform: skewY(-10deg) scale(1, 1);
+}
+
+@media (max-width: 1000px) {
+  .presentation {
+    margin-top: 12rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .presentation {
+    margin-top: 12rem;
+  }
+
+  .presentation h1 {
+    font-size: 0.8em;
+  }
+
+  .presentation h2 {
+    font-size: 0.36em;
+  }
+
+  .presentation p {
+    font-size: 0.34em;
+  }
+}

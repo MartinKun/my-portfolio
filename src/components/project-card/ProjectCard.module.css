@@ -1,0 +1,60 @@
+
+.card{
+    width: inherit;
+    height: inherit;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 1em;
+
+    -moz-box-shadow: -8px -8px 24px 0 #fff, 8px 8px 24px 0 rgba(174,174,192,0.4);
+    -webkit-box-shadow: -8px -8px 24px 0 #fff, 8px 8px 24px 0 rgba(174,174,192,0.4);
+    box-shadow: -8px -8px 24px 0 #fff, 8px 8px 24px 0 rgba(174,174,192,0.4);
+}
+
+.container{
+    position: relative;
+    
+}
+
+.container img{
+    height: inherit;
+    width: 100%;
+}
+
+.container .description{
+position: absolute;
+height: 100%;
+bottom:0;
+width: 100%;
+
+background: rgba( 41, 40, 40, 0.9 );
+backdrop-filter: blur( 0px );
+-webkit-backdrop-filter: blur( 0px );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+color:#ffffff;
+
+
+display: flex;
+flex-direction: column;
+gap: 1.5em;
+justify-content: center;
+align-items: center;
+text-align: center;
+
+animation: slide 0.4s cubic-bezier(0.215, 0.610, 0.355, 1);
+animation-fill-mode: forwards;
+}
+
+.container .description .link{
+    margin-top: 20em;
+}
+
+@keyframes slide {
+    from{
+        opacity: 0;
+    }
+
+    to{
+        opacity: 100%;
+    }
+}

@@ -1,0 +1,24 @@
+.card {
+  height: 16em;
+  width: 17.5em;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  display: flex;
+  justify-content: center;
+}
+.card:hover{
+    background: rgba(88, 145, 219, 0.25);
+box-shadow: 0 8px 32px 0 rgba(14, 14, 15, 0.37);
+backdrop-filter: blur( 20px );
+-webkit-backdrop-filter: blur( 20px );
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.logoImage{
+    margin: auto;
+}
