@@ -1,0 +1,28 @@
+.socialListTag {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+}
+
+.socialList li {
+  list-style: none;
+  margin: 25px 0;
+  width: 35px;
+}
+
+.logoLightMode {
+  transition: 0.2s;
+  stroke: black;
+}
+
+.logoHover {
+  transition: 0.2s;
+  stroke: #0979b0;
+}
+
+.logoDarkMode {
+  transition: 0.2s;
+  stroke: white;
+}

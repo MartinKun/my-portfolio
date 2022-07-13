@@ -1,65 +1,30 @@
+import { useContext } from "react";
 import styles from "./App.module.css";
-
-import Header from "./sections/header/Header";
-import Hero from "./sections/hero/Hero";
-import About from "./sections/about/About";
-import Skills from "./sections/skills/Skills";
-import Projects from "./sections/projects/Projects";
-import Contact from "./sections/contact/Contact";
-import { useEffect, useRef } from "react";
+import Layout from "./components/Layout";
+import ScrollDown from "./components/ScrollDown";
+import SocialList from "./components/SocialList";
+import ThemeContext from "./context/ThemeContext";
+import Header from "./sections/Header";
+import Hero from "./sections/Hero";
 
 function App() {
-  const home = useRef(null);
-  const about = useRef(null);
-  const skills = useRef(null);
-  const projects = useRef(null);
-  const contact = useRef(null);
-
-  const scrollTo = (section) => {
-
-    console.log(section.current);
-
-    window.scrollTo({top: section.current.offsetTop, behavior: "smooth"})
-  }
-
-  const selectSection = (section) => {
-
-    console.log(section)
-    
-    switch(section){
-      case "home": scrollTo(home);
-      break;
-      case "about": scrollTo(about);
-      break;
-      case "skills": scrollTo(skills);
-      break;
-      case "projects": scrollTo(projects);
-      break;
-      case "contact": scrollTo(contact);
-      break;
-    }
-  }
+  const { isLightOn, setIsLightOn } = useContext(ThemeContext);
 
   return (
-    <div className={styles.app}>
+    <div
+      className={
+        isLightOn
+          ? `${styles.app} ${styles.lightMode}`
+          : `${styles.app} ${styles.darkMode}`
+      }
+    >
+      <SocialList />
+      <ScrollDown />
+      <Header />
 
-      <Header selectSection={selectSection}/>
-
-      <div ref={home}>
+      <Layout>
         <Hero />
-      </div>
-      <div ref={about}>
-        <About />
-      </div>
-      <div ref={skills}>
-        <Skills />
-      </div>
-      <div ref={projects}>
-        <Projects />
-      </div>
-      <div ref={contact}>
-        <Contact />
-      </div>
+      </Layout>
     </div>
   );
 }

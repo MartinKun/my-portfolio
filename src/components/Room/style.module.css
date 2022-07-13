@@ -1,0 +1,50 @@
+.roomContainer {
+  padding-top: 40px;
+  width: 1056px;
+  height: 703px;
+  overflow: hidden;
+  position: relative;
+}
+
+.room {
+  position: absolute;
+}
+
+.room.lightOn {
+  left: 0px;
+  animation: lightOn 0.05s steps(5) forwards;
+}
+
+.room.lightOff {
+  left: -5280px;
+  animation: lightOff 0.05s steps(5) forwards;
+}
+
+.clickArea {
+  position: absolute;
+  bottom: 100px;
+  right: 190px;
+  width: 100px;
+  height: 50px;
+  transform: rotate(25deg);
+}
+
+@keyframes lightOn {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -5280px;
+  }
+}
+
+@keyframes lightOff {
+  0% {
+    left: -5280px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}

@@ -1,0 +1,124 @@
+@import url("https://fonts.googleapis.com/css?family=Oswald");
+
+.scrollDown {
+  position: fixed;
+  flex-direction: column;
+  bottom: 0;
+
+  right: 20px;
+  z-index: 1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 112px;
+  position: relative;
+}
+
+.scrollDownText {
+  font-size: 18px;
+  font-family: "Oswald";
+}
+
+.scrollDownTextLightMode {
+  transition: 0.2;
+  color: black;
+}
+
+.scrollDownTextDarkMode {
+  transition: 0.2;
+  color: white;
+}
+
+.arrowContainer {
+  width: 90px;
+  height: 90px;
+  position: absolute;
+  bottom: 0;
+}
+
+.arrowOne {
+  width: 90px;
+  height: 90px;
+  background: #00bcd4;
+  opacity: 0.5;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.arrowTwo {
+  width: 50px;
+  height: 50px;
+  background: #00bcd4;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+  display: table;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrowTwo:before {
+  width: 42px;
+  height: 42px;
+  content: "";
+  border: 2px solid #006064;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+
+.arrowIcon {
+  font-size: 20px;
+  color: #006064;
+}
+
+/* Custom Animate.css */
+
+.animated.hinge {
+  -webkit-animation-duration: 2s;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.4, 0.4, 0.4);
+    transform: scale3d(0.4, 0.4, 0.4);
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.4, 0.4, 0.4);
+    transform: scale3d(0.4, 0.4, 0.4);
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.zoomIn {
+  -webkit-animation-name: zoomIn;
+  animation-name: zoomIn;
+}
