@@ -327,7 +327,7 @@
   }
 }
 
-@media (max-height: 720px) {
+@media (max-width: 950px) and (max-height: 720px) {
   .layout {
     padding-top: 80px;
   }
