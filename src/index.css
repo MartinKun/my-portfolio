@@ -1,6 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap');
 
-body {
-  padding: 0;
+:root {
+  --font-title: "Raleway", sans-serif;
+
+  --background-lightmode: #f4f7fc;
+  --background-darkmode:#021430;
+
+  --background-menu-lightmode: #c09256;
+  --background-menu-darkmode: #243758; 
+
+  --color-blue-light: #0979b0;
+
+  --text-color-lightmode: #000000;
+  --text-color-darkmode: #f4f7fc;
+}
+
+* {
   margin: 0;
+  padding: 0;
+  list-style: none;
 }

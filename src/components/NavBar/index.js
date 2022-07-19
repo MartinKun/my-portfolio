@@ -1,51 +1,64 @@
 import styles from "./style.module.css";
-import { useContext } from "react";
-import ThemeContext from "../../context/ThemeContext";
+import { useEffect, useState } from "react";
+import Logo from "../Logo";
+import Container from "../Container";
+import Row from "../Row";
+import NavLinks from "../NavLinks";
 
 const NavBar = () => {
-  const { isLightOn } = useContext(ThemeContext);
+  const [isMenuOpened, setIsMenuOpened] = useState(false);
+  const [nav, setNav] = useState({
+    isScrolledUp: false,
+    isOnTop: true,
+  });
+
+  let prevScrollY = 0;
+  const controlNavBar = () => {
+    if (window.scrollY < prevScrollY && window.scrollY !== 0) {
+      setNav((prevNav) => ({ ...prevNav, isScrolledUp: true, isOnTop: false }));
+    } else if (window.scrollY === 0) {
+      setNav((prevNav) => ({ ...prevNav, isScrolledUp: false, isOnTop: true }));
+    } else {
+      setNav((prevNav) => ({
+        ...prevNav,
+        isScrolledUp: false,
+        isOnTop: false,
+      }));
+    }
+    prevScrollY = window.scrollY;
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavBar);
+    return () => {
+      window.removeEventListener("scroll", controlNavBar);
+    };
+  }, []);
+
   return (
-    <nav className={isLightOn ? styles.navLightMode : styles.navDarkMode}>
-
-      <ul>
-        <li className={`${styles.current}`}>
-          <span>HOME</span>
-        </li>
-        <li className={styles.navLink}>
-          <span>ABOUT</span>
-        </li>
-        <li className={styles.navLink}>
-          <span>SKILLS</span>
-        </li>
-        <li className={styles.navLink}>
-          <span>PROJECTS</span>
-        </li>
-        <li className={styles.navLink}>
-          <span>CONTACT</span>
-        </li>
-      </ul>
-
-      {/*
-      <ul className={styles.navLinks}>
-        <li className={`${styles.navLink} + ${styles.current}`}>
-          <span>HOME</span>
-        </li>
-        <li className={styles.navLink}>
-          <span>ABOUT</span>
-        </li>
-        <li className={styles.navLink}>
-          <span>SKILLS</span>
-        </li>
-        <li className={styles.navLink}>
-          <span>PROJECTS</span>
-        </li>
-        <li className={styles.navLink}>
-          <span>CONTACT</span>
-        </li>
-      </ul>
-        
-        */}
-    </nav>
+    <div>
+      {/*isMenuOpened && <div className={styles.backgroundMenuOpened}></div>*/}
+      <nav
+        className={
+          nav.isOnTop
+            ? `${isMenuOpened ? styles.navBarMenuOpened : styles.navBar} ${styles.onTop}`
+            : nav.isScrolledUp
+            ? `${styles.navBar} ${styles.scrolledUp}`
+            : `${styles.navBar}`
+        }
+      >
+        <Container>
+          <Row>
+            <div className={styles.columnOne}>
+              <Logo />
+            </div>
+            <div className={styles.columnTwo}>
+              <NavLinks setIsMenuOpened={setIsMenuOpened} isMenuOpened={isMenuOpened}/>
+            </div>
+          </Row>
+        </Container>
+      </nav>
+    </div>
   );
 };
 

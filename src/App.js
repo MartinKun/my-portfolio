@@ -1,14 +1,25 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import styles from "./App.module.css";
-import Layout from "./components/Layout";
-import ScrollDown from "./components/ScrollDown";
+import Splash from "./components/Splash";
 import SocialList from "./components/SocialList";
+import ScrollDown from "./components/ScrollDown";
 import ThemeContext from "./context/ThemeContext";
+import About from "./sections/About";
 import Header from "./sections/Header";
-import Hero from "./sections/Hero";
+import AnimationContext from "./context/AnimationContext";
 
 function App() {
-  const { isLightOn, setIsLightOn } = useContext(ThemeContext);
+  const { isLightOn } = useContext(ThemeContext);
+  const { isAnimatedFinished, setIsAnimatedFinished } =
+    useContext(AnimationContext);
+
+  useEffect(() => {
+    if (!isAnimatedFinished) {
+      setTimeout(() => {
+        setIsAnimatedFinished(true);
+      }, 4600);
+    }
+  }, []);
 
   return (
     <div
@@ -18,13 +29,11 @@ function App() {
           : `${styles.app} ${styles.darkMode}`
       }
     >
-      <SocialList />
+      <Splash />
       <ScrollDown />
+      <SocialList />
       <Header />
-
-      <Layout>
-        <Hero />
-      </Layout>
+      <About />
     </div>
   );
 }

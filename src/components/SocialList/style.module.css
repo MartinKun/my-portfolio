@@ -4,6 +4,7 @@
   align-items: center;
   position: fixed;
   top: 0;
+  margin-left: 40px;
 }
 
 .socialList li {
@@ -25,4 +26,30 @@
 .logoDarkMode {
   transition: 0.2s;
   stroke: white;
+}
+
+.socialListAppear {
+  opacity: 0;
+  animation: appearSocialList 0.2s forwards 3.6s;
+}
+
+.socialListAppear li {
+  list-style: none;
+  margin: 25px 0;
+  width: 35px;
+}
+
+@keyframes appearSocialList {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@media (max-width: 950px) {
+  .socialListTag {
+    display: none;
+  }
 }

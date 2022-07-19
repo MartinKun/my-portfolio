@@ -1,0 +1,4 @@
+.container {
+    padding-left: clamp(20px, 2%, 48px);
+    padding-right: clamp(30px, 2%, 48px);
+  }

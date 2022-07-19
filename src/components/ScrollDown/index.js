@@ -3,12 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDown } from "@fortawesome/free-solid-svg-icons";
 import { useContext } from "react";
 import ThemeContext from "../../context/ThemeContext";
+import AnimationContext from "../../context/AnimationContext";
 
 const ScrollDown = () => {
+  const { isAnimatedFinished } = useContext(AnimationContext);
   const { isLightOn } = useContext(ThemeContext);
 
   return (
-    <div className={styles.scrollDown}>
+    <div className={isAnimatedFinished ? styles.scrollDown : styles.scrollDownAppear}>
       <div className={styles.container}>
         <div
           className={

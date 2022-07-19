@@ -1,0 +1,22 @@
+.pdfLogo {
+  background-color: aqua;
+  height: 100%;
+  position: relative;
+  margin-right: 25px;
+}
+
+.pdfIcon {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.pdfIconLightMode {
+  transition: 0.2s;
+  fill: black;
+}
+
+.pdfIconDarkMode {
+  transition: 0.2s;
+  fill: white;
+}

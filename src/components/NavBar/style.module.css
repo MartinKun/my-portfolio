@@ -1,249 +1,53 @@
+.navBar {
+  position: absolute;
+  top: -100px;
+  width: 100%;
 
-.navDarkMode ul {
-  font-size: 12px;
-  display: flex;
-  flex-direction: row;
-  color: white;
-  letter-spacing: 3px;
-  font-family: "Raleway", sans-serif;
-  font-weight: 500;
-  padding: 0;
-  gap: 32px;
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(5.9px);
+  -webkit-backdrop-filter: blur(5.9px);
+
+  transition: 0.5s;
+  z-index: 2;
+  overflow: hidden;
 }
 
-.navDarkMode li {
-  display: inline-block;
-  list-style: outside none none;
-  text-align: center;
+.onTop {
+  top: 0px;
+  padding-top: 18px;
 }
 
-
-.navDarkMode * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: all 0.35s ease;
-    transition: all 0.35s ease;
+.navBar.scrolledUp {
+  top: 0px;
+  padding-top: 0px;
+  position: fixed;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0px 6px 0px rgba(0, 0, 0, 0.23);
 }
-
-.navDarkMode span {
-    padding: 8px 12px;
-    margin: 5px 0;
-    display: block;
-    color: white;
-    position: relative;
-    cursor: pointer;
-}
-
-.navDarkMode span::before,
-  .navDarkMode span::after {
-    height: 14px;
-    content: "";
-    width: 14px;
+@media (max-width: 880px) {
+  .navBarMenuOpened {
     position: absolute;
-    -webkit-transition: all 0.35s ease;
-    transition: all 0.35s ease;
-    opacity: 0;
-  }
-  
-  .navDarkMode span::before {
-    left: 0;
-    top: 0;
-    border-left: 3px solid var(--border-color);
-    border-top: 3px solid var(--border-color);
-    -webkit-transform: translate(100%, 50%);
-    transform: translate(100%, 50%);
-  }
-  
-  .navDarkMode span::after {
-    right: 0;
-    bottom: 0;
-    border-right: 3px solid var(--border-color);
-    border-bottom: 3px solid var(--border-color);
-    -webkit-transform: translate(-100%, -50%);
-    transform: translate(-100%, -50%);
-  }
-  
-  .navDarkMode span:hover,
-  .navDarkMode .current span {
-    color: #0979b0;
-    font-weight: bolder;
-  }
-  
-  .navDarkMode span:hover::before,
-  .navDarkMode .current span::before,
-  .navDarkMode span:hover::after,
-  .navDarkMode .current span::after {
-    -webkit-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
-    opacity: 1;
-  }
+    width: 100%;
+    height: 100vh;
 
-  .navLightMode ul {
-    font-size: 12px;
-    display: flex;
-    flex-direction: row;
-    color: black;
-    letter-spacing: 3px;
-    font-family: "Raleway", sans-serif;
-    font-weight: bolder;
-    padding: 0;
-    gap: 32px;
-  }
-  
-  .navLightMode li {
-    display: inline-block;
-    list-style: outside none none;
-    text-align: center;
-  }
-  
-  
-  .navLightMode * {
-      -webkit-box-sizing: border-box;
-      box-sizing: border-box;
-      -webkit-transition: all 0.35s ease;
-      transition: all 0.35s ease;
-  }
-  
-  .navLightMode span {
-      padding: 8px 12px;
-      margin: 5px 0;
-      display: block;
-      color: black;
-      position: relative;
-      cursor: pointer;
-  }
-  
-  .navLightMode span::before,
-    .navLightMode span::after {
-      height: 14px;
-      content: "";
-      width: 14px;
-      position: absolute;
-      -webkit-transition: all 0.35s ease;
-      transition: all 0.35s ease;
-      opacity: 0;
-    }
-    
-    .navLightMode span::before {
-      left: 0;
-      top: 0;
-      border-left: 3px solid var(--border-color);
-      border-top: 3px solid var(--border-color);
-      -webkit-transform: translate(100%, 50%);
-      transform: translate(100%, 50%);
-    }
-    
-    .navLightMode span::after {
-      right: 0;
-      bottom: 0;
-      border-right: 3px solid var(--border-color);
-      border-bottom: 3px solid var(--border-color);
-      -webkit-transform: translate(-100%, -50%);
-      transform: translate(-100%, -50%);
-    }
-    
-    .navLightMode span:hover,
-    .navLightMode .current span {
-      color: #0979b0;
-      font-weight: bolder;
-    }
-    
-    .navLightMode span:hover::before,
-    .navLightMode .current span::before,
-    .navLightMode span:hover::after,
-    .navLightMode .current span::after {
-      -webkit-transform: translate(0%, 0%);
-      transform: translate(0%, 0%);
-      opacity: 1;
-    }
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(5.9px);
+    -webkit-backdrop-filter: blur(5.9px);
 
-/*
-.nav {
-    --border-color: #0979b0;
-    height: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    font-family: "Raleway", sans-serif;
-  }*/
-
-/*
-  .navLinks {
-    font-size: 10px;
-    display: flex;
-    flex-direction: row;
-    gap: 32px;
-    font-weight: 500;
-    letter-spacing: 3px;
+    transition: 0.5s;
     z-index: 2;
-  }
-  
-  .navLinks * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    -webkit-transition: all 0.35s ease;
-    transition: all 0.35s ease;
-  }
-  
-  .navLinks li {
-    display: inline-block;
-    list-style: outside none none;
-    margin: 0 15px;
-    padding: 0;
-  }
-  
-  .navLinks span {
-  
-    padding: 8px 12px;
-    margin: 5px 0;
-    display: block;
-    color: white;
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .navLinks span::before,
-  .navLinks span::after {
-    height: 14px;
-    content: "";
-    width: 14px;
-    position: absolute;
-    -webkit-transition: all 0.35s ease;
-    transition: all 0.35s ease;
-    opacity: 0;
-  }
-  
-  .navLinks span::before {
-    left: 0;
-    top: 0;
-    border-left: 3px solid var(--border-color);
-    border-top: 3px solid var(--border-color);
-    -webkit-transform: translate(100%, 50%);
-    transform: translate(100%, 50%);
-  }
-  
-  .navLinks span::after {
-    right: 0;
-    bottom: 0;
-    border-right: 3px solid var(--border-color);
-    border-bottom: 3px solid var(--border-color);
-    -webkit-transform: translate(-100%, -50%);
-    transform: translate(-100%, -50%);
-  }
-  
-  .navLinks span:hover,
-  .navLinks .current span {
-    color: #0979b0;
-  }
-  
-  .navLinks span:hover::before,
-  .navLinks .current span::before,
-  .navLinks span:hover::after,
-  .navLinks .current span::after {
-    -webkit-transform: translate(0%, 0%);
-    transform: translate(0%, 0%);
-    opacity: 1;
+    overflow: hidden;
   }
 
-  */
+  .backgroundMenuOpened {
+    position: fixed;
+    min-height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(0.1em);
+    backdrop-filter: blur(0.1em);
+    z-index: 2;
+    transition: 0.2s;
+  }
+}

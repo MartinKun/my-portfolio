@@ -4,6 +4,8 @@
     --color-primary: #004173;
     --color-secondary: #0979b0;
     padding: 10px;
+    opacity: 0%;
+    animation: showLogo 0.2s forwards 3.2s;
 }
 
 .logo > div {
@@ -56,3 +58,12 @@
     height: 22px;
     transform: skew(25deg);
 }
+
+@keyframes showLogo {
+    0%{
+      opacity: 0%;
+    }
+    100%{
+      opacity: 100%;
+    }
+  }

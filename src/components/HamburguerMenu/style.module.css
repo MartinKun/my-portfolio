@@ -1,0 +1,163 @@
+.toggleHamburguer {
+    display: none;
+}
+
+.hamburguer {
+  width: 38px;
+  height: 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.firstLineHamburguer {
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  top: 0;
+  background-color: var(--color-blue-light);
+  transition: 0.4s;
+
+  animation: rotateClosedFirstLine 0.2s;
+}
+
+.secondLineHamburguer {
+  position: absolute;
+  width: 38px;
+  height: 4px;
+  top: 45%;
+
+  background-color: var(--color-blue-light);
+  animation: showSecondLine 0.2s;
+}
+
+.thirdLineHamburguer {
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  bottom: 0;
+  right: 0;
+  background-color: var(--color-blue-light);
+  transition: 0.4s;
+
+  animation: rotateClosedThirdLine 0.2s;
+}
+
+.firstLineClosed {
+  position: absolute;
+  width: 38px;
+  transform: rotate(45deg) translateX(10px) translateY(10px);
+  height: 4px;
+  top: 0;
+  background-color: var(--color-blue-light);
+  transition: 0.4s;
+
+  animation: rotateHamburguerFirstLine 0.2s;
+}
+
+.secondLineClosed {
+  position: absolute;
+  width: 0px;
+  left: 50%;
+  height: 4px;
+  top: 45%;
+
+  background-color: var(--color-blue-light);
+  animation: hideSecondLine 0.2s;
+}
+
+.thirdLineClosed {
+  position: absolute;
+  width: 38px;
+  transform: rotate(-45deg) translateX(-10px) translateY(10px);
+  height: 4px;
+  top: 0;
+  right: 0;
+  background-color: var(--color-blue-light);
+  transition: 0.4s;
+
+  animation: rotateHamburguerThirdLine 0.2s;
+}
+
+@keyframes rotateHamburguerFirstLine {
+  0% {
+    width: 20px;
+    height: 4px;
+    top: 0;
+  }
+
+  100% {
+    width: 38px;
+    transform: rotate(45deg) translateX(10px) translateY(10px);
+  }
+}
+
+@keyframes hideSecondLine {
+  0% {
+    width: 38px;
+    left: 0;
+  }
+
+  100% {
+    width: 0px;
+    left: 50%;
+  }
+}
+
+@keyframes rotateHamburguerThirdLine {
+  0% {
+    width: 20px;
+    height: 4px;
+    bottom: 0;
+    right: 0;
+  }
+
+  100% {
+    width: 38px;
+    transform: rotate(-45deg) translateX(-10px) translateY(10px);
+  }
+}
+
+@keyframes rotateClosedFirstLine {
+  0% {
+    width: 38px;
+    transform: rotate(45deg) translateX(10px) translateY(10px);
+  }
+
+  100% {
+    width: 20px;
+    height: 4px;
+    top: 0;
+  }
+}
+
+@keyframes showSecondLine {
+  0% {
+    width: 0px;
+    left: 50%;
+  }
+
+  100% {
+    width: 38px;
+    left: 0;
+  }
+}
+
+@keyframes rotateClosedThirdLine {
+  0% {
+    width: 38px;
+    transform: rotate(45deg) translateX(-10px) translateY(-10px);
+  }
+
+  100% {
+    width: 20px;
+    height: 4px;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+@media (max-width: 880px) {
+    .toggleHamburguer {
+        display: flex;
+    }
+}

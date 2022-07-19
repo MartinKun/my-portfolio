@@ -1,50 +1,331 @@
 .roomContainer {
-  padding-top: 40px;
-  width: 1056px;
-  height: 703px;
+  width: 726px;
+  height: 643px;
   overflow: hidden;
   position: relative;
 }
 
 .room {
   position: absolute;
+  width: calc(6 * 726px);
+}
+
+.roomAppear {
+  position: absolute;
+  opacity: 2%;
+  width: calc(6 * 726px);
+  animation: appearRoom 0.2s forwards 3.5s;
+}
+
+@keyframes appearRoom {
+  0% {
+    opacity: 2%;
+  }
+  100% {
+    opacity: 100%;
+  }
 }
 
 .room.lightOn {
-  left: 0px;
-  animation: lightOn 0.05s steps(5) forwards;
+  left: -3630px;
 }
 
 .room.lightOff {
-  left: -5280px;
-  animation: lightOff 0.05s steps(5) forwards;
+  left: 0;
+}
+
+.room.lightAnimatedOn {
+  left: 0px;
+  animation: lightOn1 0.05s steps(5) forwards;
+}
+
+.room.lightAnimatedOff {
+  left: -3630px;
+  animation: lightOff1 0.05s steps(5) forwards;
 }
 
 .clickArea {
+  width: 50px;
+  height: 100px;
   position: absolute;
-  bottom: 100px;
-  right: 190px;
-  width: 100px;
-  height: 50px;
-  transform: rotate(25deg);
+  bottom: 45px;
+  right: 60px;
+  transform: rotate(-63deg);
 }
 
-@keyframes lightOn {
+@keyframes lightOn1 {
   0% {
     left: 0px;
   }
 
   100% {
-    left: -5280px;
+    left: -3630px;
   }
 }
 
-@keyframes lightOff {
+@keyframes lightOff1 {
   0% {
-    left: -5280px;
+    left: -3630px;
   }
 
   100% {
     left: 0px;
   }
+}
+
+@keyframes lightOn2 {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -3000px;
+  }
+}
+
+@keyframes lightOff2 {
+  0% {
+    left: -3000px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .roomContainer {
+    width: 600px;
+    height: 531.4px;
+  }
+
+  .room {
+    width: calc(6 * 600px);
+    height: 531.4px;
+  }
+
+  .clickArea {
+    width: 50px;
+    height: 80px;
+    bottom: 35px;
+    right: 50px;
+  }
+
+  .room.lightOn {
+    left: -3000px;
+  }
+
+  .room.lightOff {
+    left: 0;
+  }
+
+  .room.lightAnimatedOn {
+    left: 0px;
+    animation: lightOn2 0.05s steps(5) forwards;
+  }
+
+  .room.lightAnimatedOff {
+    left: -3000px;
+    animation: lightOff2 0.05s steps(5) forwards;
+  }
+
+  .roomAppear {
+    height: 531.4px;
+    opacity: 2%;
+    width: calc(6 * 600px);
+    animation: appearRoom 0.2s forwards 3.5s;
+  }
+}
+
+@keyframes lightOn3 {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -2500px;
+  }
+}
+
+@keyframes lightOff3 {
+  0% {
+    left: -2500px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+@media (max-width: 1300px) {
+  .roomContainer {
+    width: 500px;
+    height: 442.86px;
+  }
+
+  .room {
+    width: calc(6 * 500px);
+    height: 442.86px;
+  }
+
+  .clickArea {
+    width: 40px;
+    height: 80px;
+    bottom: 25px;
+    right: 40px;
+  }
+
+  .room.lightOn {
+    left: -2500px;
+  }
+
+  .room.lightOff {
+    left: 0;
+  }
+
+  .room.lightAnimatedOn {
+    left: 0px;
+    animation: lightOn3 0.05s steps(5) forwards;
+  }
+
+  .room.lightAnimatedOff {
+    left: -2500px;
+    animation: lightOff3 0.05s steps(5) forwards;
+  }
+
+  .roomAppear {
+    height: 442.86px;
+    opacity: 2%;
+    width: calc(6 * 500px);
+    animation: appearRoom 0.2s forwards 3.5s;
+  }
+}
+
+@keyframes lightOn4 {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -2250px;
+  }
+}
+
+@keyframes lightOff4 {
+  0% {
+    left: -2250px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .roomContainer {
+    width: 450px;
+    height: 398.55px;
+  }
+
+  .room {
+    width: calc(6 * 450px);
+    height: 398.55px;
+  }
+
+  .clickArea {
+    width: 35px;
+    height: 80px;
+    bottom: 18px;
+    right: 35px;
+  }
+
+  .room.lightOn {
+    left: -2250px;
+  }
+
+  .room.lightOff {
+    left: 0;
+  }
+
+  .room.lightAnimatedOn {
+    left: 0px;
+    animation: lightOn4 0.05s steps(5) forwards;
+  }
+
+  .room.lightAnimatedOff {
+    left: -2250px;
+    animation: lightOff4 0.05s steps(5) forwards;
+  }
+
+  .roomAppear {
+    height: 398.55px;
+    opacity: 2%;
+    width: calc(6 * 450px);
+    animation: appearRoom 0.2s forwards 3.2s;
+  }
+}
+
+@keyframes lightOn5 {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -1500px;
+  }
+}
+
+@keyframes lightOff5 {
+  0% {
+    left: -1500px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+@media (max-width: 520px) {
+  .roomContainer {
+    width: 300px;
+    height: 265.7px;
+  }
+
+  .room {
+    width: calc(6 * 300px);
+    height: 265.7px;
+  }
+
+  .clickArea {
+    width: 30px;
+    height: 50px;
+    bottom: 12px;
+    right: 20px;
+  }
+
+  .room.lightOn {
+    left: -1500px;
+  }
+
+  .room.lightOff {
+    left: 0;
+  }
+
+  .room.lightAnimatedOn {
+    left: 0px;
+    animation: lightOn5 0.05s steps(5) forwards;
+  }
+
+  .room.lightAnimatedOff {
+    left: -1500px;
+    animation: lightOff5 0.05s steps(5) forwards;
+  }
+
+  .roomAppear {
+    height: 265.7px;
+    opacity: 2%;
+    width: calc(6 * 300px);
+    animation: appearRoom 0.2s forwards 3.2s;
+  }
+  
 }

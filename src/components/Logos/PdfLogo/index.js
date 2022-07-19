@@ -1,41 +1,11 @@
-import { useContext } from "react";
-import Room from "../../components/Room";
-import ThemeContext from "../../context/ThemeContext";
-import styles from "./style.module.css";
+import { useContext } from 'react';
+import ThemeContext from '../../../context/ThemeContext';
+import styles from './style.module.css'
 
-const Hero = () => {
-  const { isLightOn, setIsLightOn } = useContext(ThemeContext);
+const PdfLogo = () => {
 
-  return (
-    <div className={styles.hero}>
-      <div className={styles.bigHeading}>
-        <h2>
-          <span
-            className={isLightOn ? styles.nameLightMode : styles.nameDarkMode}
-          >
-            MARTÍN
-          </span>
-          <span className={styles.surName}> KUN</span>
-        </h2>
-        <h3
-          className={
-            isLightOn ? styles.professionLightMode : styles.professionDarkMode
-          }
-        >
-          BACKEND DEVELOPER
-        </h3>
-        <button
-          className={isLightOn ? styles.resumeLightMode : styles.resumeDarkMode}
-        >
-          <PdfLogo isLightOn={isLightOn}/> <span>RESUME</span>
-        </button>
-      </div>
-      <Room />
-    </div>
-  );
-};
+    const { isLightOn } = useContext(ThemeContext);
 
-const PdfLogo = ({isLightOn}) => {
   return (
     <span className={styles.pdfLogo}>
       <svg
@@ -49,7 +19,7 @@ const PdfLogo = ({isLightOn}) => {
         />
       </svg>
     </span>
-  );
-};
+  )
+}
 
-export default Hero;
+export default PdfLogo

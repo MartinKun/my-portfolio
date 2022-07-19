@@ -1,0 +1,156 @@
+.splash {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: #0c1022;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: splash 3s forwards;
+}
+
+.box {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: rgba(12, 16, 34, 0.75);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  opacity: 0;
+  animation: appearBox 0.02s 0.2s forwards;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-image: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #004173
+  );
+  animation: animate 4s linear infinite;
+  animation-delay: -2s;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background-image: conic-gradient(
+    transparent,
+    transparent,
+    transparent,
+    #0979b0
+  );
+  animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.boxInside {
+  position: absolute;
+  inset: 5px;
+  border-radius: 16px;
+  background: #0c1022;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes appearBox {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+.logo {
+  --color-primary: #004173;
+  --color-secondary: #0979b0;
+  padding: 10px;
+  opacity: 0%;
+  animation: showLogo 0.5s forwards 0.4s;
+}
+
+.logo > div {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo > div > div:first-child > div:first-child {
+  background-color: var(--color-primary);
+  border-top-left-radius: 1px;
+  border-top-right-radius: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.logo > div > div:first-child > div:last-child {
+  background-color: var(--color-primary);
+
+  width: 20px;
+  height: 50px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 2px;
+}
+
+.logo > div > div:last-child > div:first-child {
+  background-color: var(--color-secondary);
+  width: 20px;
+  height: 48px;
+  transform: skew(-40deg);
+  border-bottom-right-radius: 20px;
+}
+.logo > div > div:last-child > div:last-child {
+  background-color: var(--color-primary);
+  border-top-right-radius: 16px;
+  border-bottom-left-radius: 10px;
+  margin-top: -22px;
+  margin-left: 10px;
+  width: 20px;
+  height: 44px;
+  transform: skew(25deg);
+}
+
+@keyframes showLogo {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes splash {
+  0% {
+    opacity: 100%;
+  }
+  90% {
+    opacity: 100%;
+  }
+  99% {
+    right: 0;
+  }
+  100% {
+    opacity: 0%;
+    right: -100%;
+  }
+}

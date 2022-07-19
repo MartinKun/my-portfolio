@@ -1,13 +1,14 @@
-import Logo from "../../components/Logo";
+import Container from "../../components/Container";
 import NavBar from "../../components/NavBar";
+import Hero from "../../components/Hero";
 import styles from "./style.module.css";
 
 const Header = () => {
   return (
-    <div className={styles.header}>
-        <Logo />
+    <header className={styles.header}>
       <NavBar />
-    </div>
+      <Hero />
+    </header>
   );
 };
 

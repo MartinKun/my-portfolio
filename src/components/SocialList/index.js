@@ -1,8 +1,10 @@
 import { useContext, useState } from "react";
+import AnimationContext from "../../context/AnimationContext";
 import ThemeContext from "../../context/ThemeContext";
 import styles from "./style.module.css";
 
 const SocialList = () => {
+  const { isAnimatedFinished } = useContext(AnimationContext);
   const { isLightOn } = useContext(ThemeContext);
 
   const [isMouseEnterLinkedinIcon, setIsMouseEnterLinkedinIcon] = useState(false);
@@ -10,7 +12,7 @@ const SocialList = () => {
 
   return (
     <div className={styles.socialListTag}>
-      <ul className={styles.socialList}>
+      <ul className={isAnimatedFinished ? styles.socialList : styles.socialListAppear}>
         <li onMouseEnter={() =>setIsMouseEnterLinkedinIcon(true)} onMouseLeave={() =>setIsMouseEnterLinkedinIcon(false)}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
