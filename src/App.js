@@ -5,6 +5,7 @@ import SocialList from "./components/SocialList";
 import ScrollDown from "./components/ScrollDown";
 import ThemeContext from "./context/ThemeContext";
 import About from "./sections/About";
+import Projects from "./sections/Projects";
 import Header from "./sections/Header";
 import AnimationContext from "./context/AnimationContext";
 
@@ -33,7 +34,7 @@ function App() {
       <ScrollDown />
       <SocialList />
       <Header />
-      <About />
+      <Projects />
     </div>
   );
 }

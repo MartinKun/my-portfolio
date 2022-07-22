@@ -1,0 +1,253 @@
+.cardWrapper {
+  margin: 20px 0;
+  width: 57vw;
+  height: fit-content;
+  position: relative;
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 16vw;
+  /*background-size: 100%;
+  background-repeat: no-repeat;*/
+  border-radius: 4px;
+  /*background-color: rgba(33, 72, 95, 0.4);*/
+}
+
+.image{
+  width: 28.75vw;
+  height: 16vw;
+  position: absolute;
+  /*background-size: 100%;
+  background-repeat: no-repeat;*/
+  border-radius: 4px;
+  /*background-color: rgba(33, 72, 95, 0.4);*/
+  box-shadow: 0px 40px 20px -20px rgba(0, 0, 0, 0.25);
+}
+
+.imageRight {
+  right: 0;
+}
+
+.imageLeft {
+  left: 0;
+}
+
+.content {
+  box-sizing: border-box;
+  padding: 20px 0;
+  position: absolute;
+  top: 0;
+  width: 52%;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: 15px;
+}
+
+.contentLeft {
+  left: 0;
+  text-align: start;
+  justify-content: start;
+}
+
+.contentRight{
+  right: 0;
+  text-align: end;
+  justify-content: end;
+}
+
+.content p {
+  padding: 20px;
+  background-color: rgba(42, 69, 85, 0.95);
+  color: rgb(151, 196, 188);
+  border-radius: 5px;
+  line-height: 24px;
+}
+
+.title {
+  transition: 0.2s;
+  margin-bottom: 1vw;
+  font-size: 30px;
+  font-family: var(--font-title);
+  font-weight: 600;
+  
+}
+
+.titleLightMode {
+  color: var(--text-color-lightmode);
+}
+
+.titleDarkMode {
+  color: var(--text-color-darkmode);
+}
+
+.techs {
+  display: flex;
+  color: var(--text-color-darkmode);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.techsLeft {
+  align-items: flex-start;
+  justify-content: start;
+}
+
+.techsRight {
+  align-items: flex-end;
+  justify-content: end;
+}
+
+.techs ul{
+  display: flex;
+  gap: 15px;
+}
+
+.techLightMode {
+  color: var(--color-blue-light);
+}
+
+.techDarkMode {
+  color: var(--text-color-darkmode);
+}
+
+.links {
+  display: flex;
+  color: var(--color-blue-light);
+}
+
+.linksRight {
+  align-items: flex-end;
+  justify-content: end;
+}
+
+.linksLeft {
+  align-items: flex-start;
+  justify-content: start;
+}
+
+.links ul{
+  display: flex;
+  gap: 15px;
+}
+
+.links li{
+  width: 30px;
+  cursor: pointer;
+}
+
+.logoLightMode {
+  transition: 0.2s;
+  stroke: black;
+}
+
+.logoHover {
+  transition: 0.2s;
+  stroke: #0979b0;
+}
+
+.logoDarkMode {
+  transition: 0.2s;
+  stroke: white;
+}
+
+/*
+.imageWrapper::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(33, 72, 95, 0.4);
+}
+
+.imageWrapper:hover:after{
+    transition: 0.2s;
+    background-color: initial;
+
+}*/
+
+/*
+.cardWrapper {
+  width: 1100px;
+  height: 280px;
+  background-color: #ffffff;
+  position: relative;
+  display: flex;
+  box-shadow: 0px 40px 20px -20px rgba(0, 0, 0, 0.25);
+}
+
+.imageWrapper {
+  width: 553px;
+  height: 310px;
+  position: relative;
+  bottom: 30px;
+  box-shadow: 20px 0px 30px rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.contentWrap {
+  width: 55%;
+  height: 100%;
+  background-image: url(../../assets/background-card.jpg);
+  background-size: 180%;
+  background-repeat: no-repeat;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.contentWrap::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(14, 41, 85, 0.9);
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  position: absolute;
+  top: 0;
+  left: 0%;
+  z-index: 999;
+  
+}
+
+.content-header {
+  margin-bottom: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contentWrap .title {
+  color: #ffffff;
+  font-size: 40px;
+  font-weight: 600;
+  font-family: var(--font-title);
+  transform: translateZ(50px);
+}
+
+.contentWrap .content p {
+    color: #707070;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 30px;
+    transform: translateZ(18px);
+}
+
+.contentWrap .content .socialBtns {
+    padding: 18px 25px;
+    color: #272727;
+    background-color: #fad405;
+    font-size: 18px;
+    position: absolute;
+    right: 50px;
+    text-decoration: none;
+}*/

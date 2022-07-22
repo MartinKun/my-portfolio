@@ -63,7 +63,7 @@ const NavLinks = (props) => {
             </span>
           ) : (
             <span className={!isAnimatedFinished && styles.homeAnimated}>
-              PRINCIPAL
+              INICIO
             </span>
           )}
         </li>
@@ -75,17 +75,6 @@ const NavLinks = (props) => {
           ) : (
             <span className={!isAnimatedFinished && styles.aboutAnimated}>
               SOBRE MI
-            </span>
-          )}
-        </li>
-        <li>
-          {language.english ? (
-            <span className={!isAnimatedFinished && styles.skillsAnimated}>
-              SKILLS
-            </span>
-          ) : (
-            <span className={!isAnimatedFinished && styles.skillsAnimated}>
-              HABILIDADES
             </span>
           )}
         </li>
