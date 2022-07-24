@@ -1,10 +1,12 @@
 import { useContext, useState, useEffect } from "react";
+import LanguageContext from "../../context/LanguageContext";
 import ThemeContext from "../../context/ThemeContext";
 import { getFeaturedWorks } from "../../service/service";
 import styles from "./style.module.css";
 
 const ProjectCard = (props) => {
   const { isLightOn } = useContext(ThemeContext);
+  const { language } = useContext(LanguageContext);
   const [isMouseEnterGitHubIcon, setIsMouseEnterGitHubIcon] = useState(false);
   const [isMouseEnterExternalLinkIcon, setIsMouseEnterExternalLinkIcon] =
     useState(false);
@@ -36,9 +38,9 @@ const ProjectCard = (props) => {
                   : `${styles.title} ${styles.titleDarkMode}`
               }
             >
-              {props.project.title}
+              {language.english ? props.project.titleEn : props.project.titleEs}
             </span>
-            <p>{props.project.description}</p>
+            <p>{language.english ? props.project.descriptionEn : props.project.descriptionEs}</p>
             <div
               className={
                 (props.index + 1) % 2 === 0
@@ -49,7 +51,7 @@ const ProjectCard = (props) => {
               <ul>
                 {props.project.techs.map((tech, index) => (
                   <li
-                    key={props.index}
+                    key={(props.project.id + index)}
                     className={
                       isLightOn ? styles.techLightMode : styles.techDarkMode
                     }

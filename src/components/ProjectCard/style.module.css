@@ -129,11 +129,12 @@
 
 .links ul{
   display: flex;
-  gap: 15px;
+  gap: 16px;
 }
 
 .links li{
-  width: 30px;
+  width: 22px;
+  padding-left: 5px;
   cursor: pointer;
 }
 

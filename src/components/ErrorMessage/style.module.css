@@ -1,0 +1,11 @@
+.error {
+    margin: 0 auto;
+}
+
+.errorLightMode {
+    color: var(--text-color-lightmode);
+}
+
+.errorDarkMode {
+    color: var(--text-color-darkmode);
+}

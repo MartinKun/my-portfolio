@@ -81,11 +81,11 @@ const NavLinks = (props) => {
         <li>
           {language.english ? (
             <span className={!isAnimatedFinished && styles.projectsAnimated}>
-              PROJECTS
+              WORKS
             </span>
           ) : (
             <span className={!isAnimatedFinished && styles.projectsAnimated}>
-              PROYECTOS
+              TRABAJOS
             </span>
           )}
         </li>

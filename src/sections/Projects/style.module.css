@@ -1,14 +1,135 @@
-.projects {
-    min-height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.wrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
 }
 
-.featuredProjects { 
-    display: flex;
-    flex-direction: column;
-    gap: 100px;
-    width: 100%;
-  }
+.featuredProjects {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  width: 100%;
+}
+
+.otherProjects {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  width: 100%;
+}
+
+.showMoreBtn {
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 15px;
+}
+
+.showMoreBtnDarkMode {
+  margin: 20px auto;
+
+  transition: 0.2s;
+  font-size: 14px;
+  width: 180px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  letter-spacing: 2px;
+  outline: none;
+  background-color: transparent;
+  border: 1px #0979b0 solid;
+  color: white;
+  padding: 14px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  overflow: hidden;
+  transition: 0.3s;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  text-align: center;
+}
+
+.showMoreBtnDarkMode:hover {
+  font-weight: 800;
+}
+
+.showMoreBtnDarkMode::before {
+  left: -5%;
+  right: auto;
+  bottom: auto;
+  width: 110%;
+  height: 195%;
+  transform-origin: left bottom;
+  transform: skewY(-10deg) scale(1, 0);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  content: "";
+  background: #0979b0;
+  transition: transform 0.3s;
+}
+
+.showMoreBtnDarkMode:hover::before {
+  transform-origin: left top;
+  transform: skewY(-10deg) scale(1, 1);
+}
+
+.showMoreBtnLightMode {
+    margin: 20px auto;
+
+  transition: 0.2s;
+  font-size: 14px;
+  width: 180px;
+  font-family: "Raleway", sans-serif;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  outline: none;
+  background-color: transparent;
+  border: 1px #0979b0 solid;
+  color: black;
+  padding: 14px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  overflow: hidden;
+  transition: 0.3s;
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  text-align: center;
+}
+
+.showMoreBtnLightMode:hover {
+  font-weight: 800;
+}
+
+.showMoreBtnLightMode::before {
+  left: -5%;
+  right: auto;
+  bottom: auto;
+  width: 110%;
+  height: 195%;
+  transform-origin: left bottom;
+  transform: skewY(-10deg) scale(1, 0);
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  content: "";
+  background: #0979b0;
+  transition: transform 0.3s;
+}
+
+.showMoreBtnLightMode:hover::before {
+  transform-origin: left top;
+  transform: skewY(-10deg) scale(1, 1);
+}
