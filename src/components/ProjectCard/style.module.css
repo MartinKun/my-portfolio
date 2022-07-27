@@ -63,6 +63,7 @@
   color: rgb(151, 196, 188);
   border-radius: 5px;
   line-height: 24px;
+  text-align: left;
 }
 
 .title {
@@ -152,103 +153,3 @@
   transition: 0.2s;
   stroke: white;
 }
-
-/*
-.imageWrapper::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(33, 72, 95, 0.4);
-}
-
-.imageWrapper:hover:after{
-    transition: 0.2s;
-    background-color: initial;
-
-}*/
-
-/*
-.cardWrapper {
-  width: 1100px;
-  height: 280px;
-  background-color: #ffffff;
-  position: relative;
-  display: flex;
-  box-shadow: 0px 40px 20px -20px rgba(0, 0, 0, 0.25);
-}
-
-.imageWrapper {
-  width: 553px;
-  height: 310px;
-  position: relative;
-  bottom: 30px;
-  box-shadow: 20px 0px 30px rgba(0, 0, 0, 0.5);
-  z-index: 99;
-}
-
-.contentWrap {
-  width: 55%;
-  height: 100%;
-  background-image: url(../../assets/background-card.jpg);
-  background-size: 180%;
-  background-repeat: no-repeat;
-  position: relative;
-  word-wrap: break-word;
-}
-
-.contentWrap::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(14, 41, 85, 0.9);
-}
-
-.content {
-  width: 100%;
-  height: 100%;
-  padding: 30px;
-  position: absolute;
-  top: 0;
-  left: 0%;
-  z-index: 999;
-  
-}
-
-.content-header {
-  margin-bottom: 5px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.contentWrap .title {
-  color: #ffffff;
-  font-size: 40px;
-  font-weight: 600;
-  font-family: var(--font-title);
-  transform: translateZ(50px);
-}
-
-.contentWrap .content p {
-    color: #707070;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 30px;
-    transform: translateZ(18px);
-}
-
-.contentWrap .content .socialBtns {
-    padding: 18px 25px;
-    color: #272727;
-    background-color: #fad405;
-    font-size: 18px;
-    position: absolute;
-    right: 50px;
-    text-decoration: none;
-}*/

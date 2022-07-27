@@ -1,0 +1,114 @@
+.javaLogo {
+  transition: 0.2s ease-out;
+  width: 80px;
+}
+
+.javaLogo:hover {
+  transition: 0.2s ease-out;
+  width: 100px;
+}
+
+.pathOneLightMode {
+  transition: 0.2s;
+  fill: var(--text-color-lightMode);
+}
+
+.pathOneDarkMode {
+  transition: 0.2s;
+  fill: var(--text-color-darkmode);
+}
+
+.pathOneMouseOver {
+  transition: 0.2s;
+  fill: rgb(223, 79, 53);
+}
+
+.pathTwoLightMode {
+  transition: 0.2s;
+  fill: var(--text-color-lightMode);
+}
+
+.pathTwoDarkMode {
+  transition: 0.2s;
+  fill: var(--text-color-darkmode);
+}
+
+.pathTwoMouseOver {
+  transition: 0.2s;
+  fill: rgb(0, 119, 185);
+}
+
+.pathThreeMouseOver {
+  transition: 0.2s;
+  fill: rgb(223, 79, 53);
+}
+
+.pathThreeLightMode {
+  transition: 0.2s;
+  fill: var(--text-color-lightMode);
+}
+
+.pathThreeDarkMode {
+  transition: 0.2s;
+  fill: var(--text-color-darkmode);
+}
+
+.pathFourMouseOver {
+  transition: 0.2s;
+  fill: rgb(0, 119, 185);
+}
+
+.pathFourLightMode {
+  transition: 0.2s;
+  fill: var(--text-color-lightMode);
+}
+
+.pathFourDarkMode {
+  transition: 0.2s;
+  fill: var(--text-color-darkmode);
+}
+
+.pathFiveMouseOver {
+  transition: 0.2s;
+  fill: rgb(223, 79, 53);
+}
+
+.pathFiveLightMode {
+  transition: 0.2s;
+  fill: var(--text-color-lightMode);
+}
+
+.pathFiveDarkMode {
+  transition: 0.2s;
+  fill: var(--text-color-darkmode);
+}
+
+.pathSixMouseOver {
+  transition: 0.2s;
+  fill: rgb(0, 119, 185);
+}
+
+.pathSixLightMode {
+  transition: 0.2s;
+  fill: var(--text-color-lightMode);
+}
+
+.pathSixDarkMode {
+  transition: 0.2s;
+  fill: var(--text-color-darkmode);
+}
+
+.pathSevenMouseOver {
+  transition: 0.2s;
+  fill: rgb(223, 79, 53);
+}
+
+.pathSevenLightMode {
+  transition: 0.2s;
+  fill: var(--text-color-lightMode);
+}
+
+.pathSevenDarkMode {
+  transition: 0.2s;
+  fill: var(--text-color-darkmode);
+}

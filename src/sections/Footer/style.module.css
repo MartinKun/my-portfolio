@@ -1,0 +1,49 @@
+.footer {
+  width: 100%;
+  padding-bottom: 50px;
+  font-family: var(--font-title);
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerLightMode {
+  color: var(--text-color-lightmode);
+}
+
+.footerDarkMode {
+  color: var(--text-color-darkmode);
+}
+
+.logoLightMode {
+  transition: 0.2s;
+  stroke: black;
+}
+
+.logoHover {
+  transition: 0.2s;
+  stroke: #0979b0;
+}
+
+.logoDarkMode {
+  transition: 0.2s;
+  stroke: white;
+}
+
+.footer ul {
+    display: none;
+    padding-bottom: 10px;
+    gap: 5px;
+}
+
+.footer li {
+    width: 30px;
+}
+
+@media (max-width: 950px) {
+    .footer ul {
+      display: flex;
+    }
+}

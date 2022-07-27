@@ -1,0 +1,57 @@
+.pathOneLightMode {
+    transition: 0.2s ease-out;
+    fill: var(--text-color-lightmode);
+}
+
+.pathOneDarkMode {
+    transition: 0.2s ease-out;
+  fill: var(--text-color-darkmode);
+}
+
+.pathOneMouseEnter {
+    transition: 0.2s ease-out;
+  fill: rgb(0, 97, 138);
+}
+
+.pathTwoLightMode {
+    transition: 0.2s ease-out;
+    fill: var(--text-color-lightmode);
+}
+
+.pathTwoDarkMode {
+    transition: 0.2s ease-out;
+  fill: var(--text-color-darkmode);
+}
+
+.pathTwoMouseEnter {
+    transition: 0.2s ease-out;
+  fill: #f8981d;
+}
+
+.pathThreeLightMode {
+    transition: 0.2s ease-out;
+    fill: var(--text-color-lightmode);
+}
+
+.pathThreeDarkMode {
+    transition: 0.2s ease-out;
+  fill: var(--text-color-darkmode);
+}
+
+.pathThreeMouseEnter {
+    transition: 0.2s ease-out;
+    fill: rgb(0, 97, 138);
+}
+
+.mysqlLogo {
+  transition: 0.2s ease-out;
+  width: 100px;
+  height: 100px;
+}
+
+.mysqlLogo:hover {
+    transition: 0.2s ease-out;
+  width: 120px;
+  height: 120px;
+}
+

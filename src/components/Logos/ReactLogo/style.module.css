@@ -1,0 +1,39 @@
+.reactLogo {
+    transition: 0.2s ease-out;
+    width: 65px;
+}
+
+.reactLogo:hover {
+    transition: 0.2s ease-out;
+    width: 85px;
+}
+
+.circleLightMode {
+    transition: 0.2s ease-out;
+    fill: var(--text-color-lightmode);
+}
+
+.circleDarkMode {
+    transition: 0.2s ease-out;
+    fill: var(--text-color-darkmode);
+}
+
+.circleMouseEnter {
+    transition: 0.2s ease-out;
+    fill: rgb(83, 193, 222);
+}
+
+.pathOneLightMode {
+    transition: 0.2s ease-out;
+    stroke: var(--text-color-lightmode);
+}
+
+.pathOneDarkMode {
+    transition: 0.2s ease-out;
+    stroke: var(--text-color-darkmode);
+}
+
+.pathOneMouseEnter {
+    transition: 0.2s ease-out;
+    stroke: rgb(83, 193, 222);
+}

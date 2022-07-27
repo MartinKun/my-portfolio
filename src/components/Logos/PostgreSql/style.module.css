@@ -1,0 +1,82 @@
+.postgreSqlLogo {
+  width: 70px;
+  height: 70px;
+  transition: 0.2s ease-out;
+
+}
+
+.postgreSqlLogo:hover {
+    transition: 0.2s ease-out;
+    width: 85px;
+    height: 85px;
+}
+
+.pathOneLightMode {
+  transition: 0.2s ease-out;
+  fill: none;
+}
+
+.pathOneDarkMode {
+  transition: 0.2s ease-out;
+  fill: none;
+}
+
+.pathOneMouseEnter {
+  transition: 0.2s ease-out;
+  fill: #000;
+}
+
+.pathTwoLightMode {
+  transition: 0.2s ease-out;
+  fill: none;
+}
+
+.pathTwoDarkMode {
+  transition: 0.2s ease-out;
+  fill: none;
+}
+
+.pathTwoMouseEnter {
+  transition: 0.2s ease-out;
+  fill: #336791;
+}
+
+.pathThreeLightMode {
+  transition: 0.2s ease-out;
+  fill: var(--text-color-lightmode);
+}
+
+.pathThreeDarkMode {
+  transition: 0.2s ease-out;
+  fill: var(--text-color-darkmode);
+}
+
+.pathThreeMouseEnter {
+  transition: 0.2s ease-out;
+  fill: #ffffff;
+}
+
+.pathFourLightMode {
+  transition: 0.2s ease-out;
+  fill: var(--text-color-lightmode);
+}
+
+.pathFourDarkMode {
+  transition: 0.2s ease-out;
+  fill: var(--text-color-darkmode);
+}
+
+.pathFiveLightMode {
+  transition: 0.2s ease-out;
+  fill: var(--text-color-lightmode);
+}
+
+.pathFiveDarkMode {
+  transition: 0.2s ease-out;
+  fill: var(--text-color-darkmode);
+}
+
+.pathFiveMouseEnter {
+  transition: 0.2s ease-out;
+  fill: #336791;
+}

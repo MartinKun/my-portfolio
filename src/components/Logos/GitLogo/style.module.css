@@ -1,0 +1,24 @@
+.gitLogo {
+    transition: 0.2s ease-out;
+    width: 60px;
+}
+
+.gitLogo:hover {
+    transition: 0.2s ease-out;
+    width: 80px;
+}
+
+.pathOneLightMode {
+    transition: 0.2s ease-out;
+    fill: var(--text-color-lightmode);
+}
+
+.pathOneDarkMode {
+    transition: 0.2s ease-out;
+    fill: var(--text-color-darkmode);
+}
+
+.pathOneMouseEnter {
+    transition: 0.2s ease-out;
+    fill: #F05133;
+}

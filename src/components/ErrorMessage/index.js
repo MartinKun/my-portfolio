@@ -19,11 +19,11 @@ const ErrorMessage = () => {
     >
       <FontAwesomeIcon icon={faWarning} style={{ marginRight: "10px" }} />
       {language.english ? (
+        <span>Connection Error: Could not connect to server.</span>
+      ) : (
         <span>
           Error de conexión: No se ha podido conectar con el servidor.
         </span>
-      ) : (
-        <span>Connection Error: Could not connect to server.</span>
       )}
     </div>
   );

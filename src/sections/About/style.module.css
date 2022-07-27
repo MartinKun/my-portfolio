@@ -1,4 +1,78 @@
-.about{
-    min-height: 100vh;
-    width: 100%;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
+
+.about {
+  min-height: 100vh;
+  width: 100%;}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  min-height: inherit;
+  justify-content: center;
+  align-items: center;
+}
+
+.rowOne {
+  display: flex;
+  min-height: 400px;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
+}
+
+.description {
+  width: 50%;
+  font-size: 24px;
+  padding: 20px;
+  line-height: 30px;
+  font-weight: 300;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.descriptionDarkMode {
+  color: var(--text-color-darkmode);
+}
+
+.descriptionLightMode {
+  color: var(--text-color-lightmode)
+}
+
+.rowTwo {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-bottom: 20px;
+}
+
+.techBlock {
+  width: 50%;
+  height: fit-content;
+  margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.techBlock h2 {
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'Michroma', sans-serif;
+}
+
+.techTitleLightMode {
+  color: var(--text-color-lightmode)
+}
+
+.techTitleDarkMode {
+  color: var(--text-color-darkmode)
+}
+
+.techs {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }

@@ -8,6 +8,8 @@ import About from "./sections/About";
 import Projects from "./sections/Projects";
 import Header from "./sections/Header";
 import AnimationContext from "./context/AnimationContext";
+import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
 
 function App() {
   const { isLightOn } = useContext(ThemeContext);
@@ -34,7 +36,10 @@ function App() {
       <ScrollDown />
       <SocialList />
       <Header />
+      <About />
       <Projects />
+      <Contact />
+      <Footer />
     </div>
   );
 }

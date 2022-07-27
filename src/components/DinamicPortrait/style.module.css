@@ -1,0 +1,18 @@
+
+.box {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    inset: -10px 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(315deg, #00ccff, #d400d4);
+}
+
+.photo {
+    width: 210px;
+    z-index: 2;
+}

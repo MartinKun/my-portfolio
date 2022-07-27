@@ -1,0 +1,26 @@
+.jsLogo {
+    transition: 0.2s ease-out;
+    width: 50px;
+    height: 50px;
+}
+
+.jsLogo:hover {
+    transition: 0.2s ease-out;
+    width: 65px;
+    height: 65px;
+}
+
+.pathOneLightMode {
+    transition: 0.2s ease-out;
+    fill: var(--text-color-lightmode);
+}
+
+.pathOneDarkMode {
+    transition: 0.2s ease-out;
+    fill: var(--text-color-darkmode);
+}
+
+.pathOneMouseEnter {
+    transition: 0.2s ease-out;
+    fill: rgb(255, 201, 40);
+}

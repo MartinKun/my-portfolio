@@ -1,0 +1,21 @@
+.cssLogo {
+    transition: 0.2s ease-out;
+    width: 70px;
+    
+}
+
+.cssLogo:hover {
+    transition: 0.2s ease-out;
+    width: 90px;
+    fill: rgb(34, 153, 248);
+}
+
+.pathOneLightMode {
+    transition: 0.2s ease-out;
+    fill: var(--text-color-lightmode);
+}
+
+.pathOneDarkMode {
+    transition: 0.2s ease-out;
+    fill: var(--text-color-darkmode);
+}
