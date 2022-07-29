@@ -1,12 +1,12 @@
 .cssLogo {
     transition: 0.2s ease-out;
-    width: 70px;
+    width: 4.375em;
     
 }
 
 .cssLogo:hover {
     transition: 0.2s ease-out;
-    width: 90px;
+    width: 5.625em;
     fill: rgb(34, 153, 248);
 }
 

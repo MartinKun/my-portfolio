@@ -1,5 +1,4 @@
 import { useState, useEffect, useContext } from "react";
-import { Spinner, Button } from "react-bootstrap";
 import Container from "../../components/Container";
 import ErrorMessage from "../../components/ErrorMessage";
 import Loader from "../../components/Loader";
@@ -80,7 +79,7 @@ const Projects = () => {
   };
 
   return (
-    <div>
+    <div className={styles.projectsPage}>
       <TitleSection
         title={language.english ? "Works" : "Trabajos"}
         icon={"portfolio"}
@@ -88,12 +87,12 @@ const Projects = () => {
       <div className={styles.wrapper}>
         <Container>
           {callbacks.loadingFirstWorks && <Loader type={"page"} />}
-          <div className={styles.featuredProjects}>
+          <div className={styles.projects}>
             {works.array.map((project, index) => (
               <ProjectCard project={project} index={index} key={project.id} />
             ))}
           </div>
-          <div className={styles.otherProjects}>
+          <div className={styles.projects}>
             
             {isShowMore && (
               <button

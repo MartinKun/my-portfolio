@@ -3,25 +3,22 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  margin: 80px 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-.featuredProjects {
+.projects {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  justify-content: center;
+  align-items: center;
+  gap: 80px;
   width: 100%;
-}
-
-.otherProjects {
-  display: flex;
-  flex-direction: column;
-  gap: 100px;
-  width: 100%;
+  overflow: hidden;
 }
 
 .showMoreBtn {
-  margin: 0 auto;
   font-size: 16px;
   padding: 15px;
 }
@@ -81,7 +78,7 @@
 }
 
 .showMoreBtnLightMode {
-    margin: 20px auto;
+  margin: 20px auto;
 
   transition: 0.2s;
   font-size: 14px;
@@ -132,4 +129,20 @@
 .showMoreBtnLightMode:hover::before {
   transform-origin: left top;
   transform: skewY(-10deg) scale(1, 1);
+}
+
+@media (max-width: 500px) {
+
+
+  .projectsPage {
+    width: 100%;
+    padding: 0;
+  }
+
+  .wrapper {
+    display: flex;
+    width: 100%;
+    padding: 0;
+  }
+  
 }

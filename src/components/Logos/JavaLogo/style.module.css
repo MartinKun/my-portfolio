@@ -1,11 +1,11 @@
 .javaLogo {
   transition: 0.2s ease-out;
-  width: 80px;
+  width: 5em;
 }
 
 .javaLogo:hover {
   transition: 0.2s ease-out;
-  width: 100px;
+  width: 6.25em;
 }
 
 .pathOneLightMode {

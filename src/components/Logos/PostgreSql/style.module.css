@@ -1,14 +1,14 @@
 .postgreSqlLogo {
-  width: 70px;
-  height: 70px;
+  width: 4.375em;
+  height: 4.375em;
   transition: 0.2s ease-out;
 
 }
 
 .postgreSqlLogo:hover {
     transition: 0.2s ease-out;
-    width: 85px;
-    height: 85px;
+    width: 5.31em;
+    height: 5.31em;
 }
 
 .pathOneLightMode {

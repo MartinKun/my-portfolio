@@ -12,7 +12,6 @@ const ProjectCard = (props) => {
     useState(false);
 
   return (
-    <div className={styles.featuredProjects}>
         <div className={styles.cardWrapper}>
           <div className={styles.imageWrapper}>
             <img
@@ -166,7 +165,6 @@ const ProjectCard = (props) => {
             </ul>
           </div>
         </div>
-    </div>
   );
 };
 

@@ -1,12 +1,11 @@
-import Container from "../../components/Container";
 import NavBar from "../../components/NavBar";
 import Hero from "../../components/Hero";
 import styles from "./style.module.css";
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className={styles.header}>
-      <NavBar />
+      <NavBar selectSection={props.selectSection}/>
       <Hero />
     </header>
   );

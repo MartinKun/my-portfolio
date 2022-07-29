@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useRef } from "react";
 import styles from "./App.module.css";
 import Splash from "./components/Splash";
 import SocialList from "./components/SocialList";
@@ -24,6 +24,36 @@ function App() {
     }
   }, []);
 
+  const home = useRef(null);
+  const about = useRef(null);
+  const works = useRef(null);
+  const contact = useRef(null);
+  const footer = useRef(null);
+
+  const scrollTo = (section) => {
+    window.scrollTo({ top: section.current.offsetTop, behavior: "smooth" });
+  };
+
+  const selectSection = (section) => {
+    switch (section) {
+      case "home":
+        scrollTo(home);
+        break;
+      case "about":
+        scrollTo(about);
+        break;
+      case "works":
+        scrollTo(works);
+        break;
+      case "contact":
+        scrollTo(contact);
+        break;
+      case "footer":
+        scrollTo(footer);
+        break;
+    }
+  };
+
   return (
     <div
       className={
@@ -33,13 +63,23 @@ function App() {
       }
     >
       <Splash />
-      <ScrollDown />
+      <ScrollDown selectSection={selectSection}/>
       <SocialList />
-      <Header />
-      <About />
-      <Projects />
-      <Contact />
-      <Footer />
+      <div ref={home}>
+        <Header selectSection={selectSection} />
+      </div>
+      <div ref={about}>
+        <About />
+      </div>
+      <div ref={works}>
+        <Projects />
+      </div>
+      <div ref={contact}>
+        <Contact />
+      </div>
+      <div ref={footer}>
+        <Footer />
+      </div>
     </div>
   );
 }

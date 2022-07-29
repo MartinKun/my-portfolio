@@ -1,11 +1,11 @@
 .htmlLogo {
     transition: 0.2s ease-out;
-    width: 60px;
+    width: 3.75em;
 }
 
 .htmlLogo:hover {
     transition: 0.2s ease-out;
-    width: 80px;
+    width: 5em;
 }
 
 .pathOneLightMode {

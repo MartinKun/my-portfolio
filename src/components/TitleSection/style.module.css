@@ -53,3 +53,9 @@
     transition: 0.2s;
     background-color: var(--text-color-darkmode);
 }
+
+@media (max-width: 950px) {
+    .titleSection {
+        width: 90%;
+    }
+}

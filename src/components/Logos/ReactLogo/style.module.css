@@ -1,11 +1,11 @@
 .reactLogo {
     transition: 0.2s ease-out;
-    width: 65px;
+    width: 4.0625em;
 }
 
 .reactLogo:hover {
     transition: 0.2s ease-out;
-    width: 85px;
+    width: 5.31em;
 }
 
 .circleLightMode {

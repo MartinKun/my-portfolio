@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import LanguageContext from "../../context/LanguageContext";
 import ThemeContext from "../../context/ThemeContext";
 import AnimationContext from "../../context/AnimationContext";
@@ -11,7 +11,6 @@ const NavLinks = (props) => {
 
   const { isLightOn } = useContext(ThemeContext);
   const { language, setLanguage } = useContext(LanguageContext);
-
   const { isAnimatedFinished } = useContext(AnimationContext);
 
   useEffect(() => {
@@ -43,6 +42,13 @@ const NavLinks = (props) => {
     }
   };
 
+  const [current, setCurrent] = useState({ name: "home" });
+
+  const handleSelection = (section) => {
+    props.selectSection(section);
+    setCurrent((prevState) => ({ ...prevState, name: section }));
+  };
+
   return (
     <div>
       <ul
@@ -56,46 +62,94 @@ const NavLinks = (props) => {
             : `${styles.navLinks} ${styles.closedMenu} ${styles.navLinksDarkMode}`
         }
       >
-        <li>
+        <li onClick={() => handleSelection("home")}>
           {language.english ? (
-            <span className={!isAnimatedFinished && styles.homeAnimated}>
+            <span
+              className={
+                !isAnimatedFinished
+                  ? styles.homeAnimated
+                  : current.name === "home" && styles.current
+              }
+            >
               HOME
             </span>
           ) : (
-            <span className={!isAnimatedFinished && styles.homeAnimated}>
+            <span
+              className={
+                !isAnimatedFinished
+                  ? styles.homeAnimated
+                  : current.name === "home" && styles.current
+              }
+            >
               INICIO
             </span>
           )}
         </li>
-        <li>
+        <li onClick={() => handleSelection("about")}>
           {language.english ? (
-            <span className={!isAnimatedFinished && styles.aboutAnimated}>
+            <span
+              className={
+                !isAnimatedFinished
+                  ? styles.aboutAnimated
+                  : current.name === "about" && styles.current
+              }
+            >
               ABOUT
             </span>
           ) : (
-            <span className={!isAnimatedFinished && styles.aboutAnimated}>
+            <span
+              className={
+                !isAnimatedFinished
+                  ? styles.aboutAnimated
+                  : current.name === "about" && styles.current
+              }
+            >
               SOBRE MI
             </span>
           )}
         </li>
-        <li>
+        <li onClick={() => handleSelection("works")}>
           {language.english ? (
-            <span className={!isAnimatedFinished && styles.projectsAnimated}>
+            <span
+              className={
+                !isAnimatedFinished
+                  ? styles.worksAnimated
+                  : current.name === "works" && styles.current
+              }
+            >
               WORKS
             </span>
           ) : (
-            <span className={!isAnimatedFinished && styles.projectsAnimated}>
+            <span
+              className={
+                !isAnimatedFinished
+                  ? styles.worksAnimated
+                  : current.name === "works" && styles.current
+              }
+            >
               TRABAJOS
             </span>
           )}
         </li>
-        <li>
+        <li onClick={() => handleSelection("contact")}>
           {language.english ? (
-            <span className={!isAnimatedFinished && styles.contactAnimated}>
+            <span
+              className={
+                !isAnimatedFinished
+                  ? styles.contactAnimated
+                  : current.name === "contact" && styles.current
+              }
+            >
               CONTACT
             </span>
           ) : (
-            <span className={!isAnimatedFinished && styles.contactAnimated}>
+            <span
+              className={
+                !isAnimatedFinished
+                  ? styles.contactAnimated
+                  : current.name === "contact" && styles.current
+              }
+            >
               CONTACTO
             </span>
           )}
@@ -104,7 +158,9 @@ const NavLinks = (props) => {
           <span
             className={
               language.english
-                ? `${!isAnimatedFinished && styles.englishBtn} ${styles.currentLanguage}`
+                ? `${!isAnimatedFinished && styles.englishBtn} ${
+                    styles.currentLanguage
+                  }`
                 : `${!isAnimatedFinished && styles.englishBtn}`
             }
             onClick={() => changeLanguage("english")}
@@ -114,7 +170,9 @@ const NavLinks = (props) => {
           <span
             className={
               language.spanish
-                ? `${!isAnimatedFinished && styles.spanishBtn} ${styles.currentLanguage}`
+                ? `${!isAnimatedFinished && styles.spanishBtn} ${
+                    styles.currentLanguage
+                  }`
                 : !isAnimatedFinished && styles.spanishBtn
             }
             onClick={() => changeLanguage("spanish")}

@@ -5,12 +5,12 @@ import { useContext } from "react";
 import ThemeContext from "../../context/ThemeContext";
 import AnimationContext from "../../context/AnimationContext";
 
-const ScrollDown = () => {
+const ScrollDown = (props) => {
   const { isAnimatedFinished } = useContext(AnimationContext);
   const { isLightOn } = useContext(ThemeContext);
 
   return (
-    <div className={isAnimatedFinished ? styles.scrollDown : styles.scrollDownAppear}>
+    <div onClick={() => props.selectSection("footer")} className={isAnimatedFinished ? styles.scrollDown : styles.scrollDownAppear}>
       <div className={styles.container}>
         <div
           className={

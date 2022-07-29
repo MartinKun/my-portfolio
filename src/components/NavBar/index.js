@@ -5,7 +5,7 @@ import Container from "../Container";
 import Row from "../Row";
 import NavLinks from "../NavLinks";
 
-const NavBar = () => {
+const NavBar = (props) => {
   const [isMenuOpened, setIsMenuOpened] = useState(false);
   const [nav, setNav] = useState({
     isScrolledUp: false,
@@ -37,7 +37,6 @@ const NavBar = () => {
 
   return (
     <div>
-      {/*isMenuOpened && <div className={styles.backgroundMenuOpened}></div>*/}
       <nav
         className={
           nav.isOnTop
@@ -53,7 +52,7 @@ const NavBar = () => {
               <Logo />
             </div>
             <div className={styles.columnTwo}>
-              <NavLinks setIsMenuOpened={setIsMenuOpened} isMenuOpened={isMenuOpened}/>
+              <NavLinks selectSection={props.selectSection} setIsMenuOpened={setIsMenuOpened} isMenuOpened={isMenuOpened}/>
             </div>
           </Row>
         </Container>

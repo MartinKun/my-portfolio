@@ -1,8 +1,9 @@
 .form {
   width: 50%;
   display: grid;
-  grid-template-areas: "name email" "subject subject" "message message" "button button";
+  grid-template-areas: "name email" "subject subject" "message message";
   grid-template-rows: 50px 50px 180px;
+  grid-template-columns: 50% 50%;
 
   gap: 20px 22px;
   padding: 5px 0px;
@@ -34,36 +35,17 @@
   grid-area: message;
 }
 
+/*
 .button {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 
   grid-area: button;
-}
-
-/*
-.btnSubmit {
-  border: none;
-  font-family: var(--font-title);
-  font-weight: 400;
-  font-size: 14px;
-
-  background-color: #ffffff;
-  height: 55px;
-  width: 150px;
-  font-weight: 500;
-  cursor: pointer;
-
-  transition: 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.btnSubmit:hover {
-  transform: translateY(-12%);
 }*/
 
 .btnSubmitDarkMode {
-
   transition: 0.2s;
   font-size: 14px;
   width: 180px;
@@ -169,24 +151,15 @@
   transform: skewY(-10deg) scale(1, 1);
 }
 
-/*
-@media (max-width: 1150px) {
+@media (max-width: 950px) {
   .form {
-    padding: 2% 1em;
+    width: 90%;
   }
 }
 
 @media (max-width: 800px) {
   .form {
-    display: grid;
-    grid-template-areas: "name email" "subject subject" "message message" "button button";
-    grid-template-rows: 2em 2em 8em;
-
-    gap: 1em 1em;
-
-    padding: 0;
-
-    margin-top: 8em;
+    width: 100%;
+    gap: 12px 10px;
   }
 }
-*/

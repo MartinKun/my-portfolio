@@ -45,13 +45,13 @@
 
 .mysqlLogo {
   transition: 0.2s ease-out;
-  width: 100px;
-  height: 100px;
+  width: 6.25em;
+  height: 6.25em;
 }
 
 .mysqlLogo:hover {
     transition: 0.2s ease-out;
-  width: 120px;
-  height: 120px;
+  width: 7.5em;
+  height: 7.5em;
 }
 

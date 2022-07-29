@@ -1,9 +1,8 @@
 
 .box {
     position: relative;
-    width: 220px;
-    height: 220px;
-    inset: -10px 60px;
+    width: 13.75em;
+    height: 13.75em;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -13,6 +12,18 @@
 }
 
 .photo {
-    width: 210px;
+    width: 13.125em;
     z-index: 2;
 }
+
+@media (max-width: 720px) {
+    .box {
+        width: 10em;
+        height: 10em;
+    }
+
+    .photo {
+        width: 9.54em;
+    }
+}
+

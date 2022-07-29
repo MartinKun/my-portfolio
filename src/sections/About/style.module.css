@@ -3,7 +3,10 @@
 
 .about {
   min-height: 100vh;
-  width: 100%;}
+  width: 100%;
+  overflow: hidden;
+  font-size: 16px;
+}
 
 .wrapper {
   display: flex;
@@ -12,6 +15,7 @@
   min-height: inherit;
   justify-content: center;
   align-items: center;
+
 }
 
 .rowOne {
@@ -19,12 +23,12 @@
   min-height: 400px;
   justify-content: center;
   align-items: center;
-  gap: 120px;
+  gap: 50px;
 }
 
 .description {
   width: 50%;
-  font-size: 24px;
+  font-size: 1.5em;
   padding: 20px;
   line-height: 30px;
   font-weight: 300;
@@ -40,7 +44,8 @@
 }
 
 .rowTwo {
-  width: 100%;
+  min-width: 900px;
+  width: 60%;
   display: flex;
   flex-direction: column;
   gap: 40px;
@@ -48,7 +53,7 @@
 }
 
 .techBlock {
-  width: 50%;
+  width: 100%;
   height: fit-content;
   margin: 0px auto;
   display: flex;
@@ -58,7 +63,7 @@
 }
 
 .techBlock h2 {
-  font-size: 24px;
+  font-size: 1.5em;
   font-weight: 400;
   font-family: 'Michroma', sans-serif;
 }
@@ -75,4 +80,65 @@
   display: flex;
   flex-direction: row;
   gap: 10px;
+}
+
+@media (max-width: 1200px) {
+  .about {
+    font-size: 14px;
+  }
+
+  .rowTwo {
+    min-width: 700px;
+    width: 70%;
+    gap: 30px;
+    padding-bottom: 20px;
+  }
+}
+
+@media (max-width: 800px) {
+
+  .rowOne {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .description {
+    width: 90%;
+    padding: 10px;
+  }
+
+  .rowTwo {
+    min-width: 100%;
+    gap: 50px;
+    padding-bottom: 80px;
+  }
+
+  .techBlock {
+    flex-direction: column;
+    
+  }
+
+  .techBlock h2{
+    width: 100%;
+    text-align: start;
+    margin-bottom: 15px;
+  }
+
+  .techs {
+    gap: 0px;
+  }
+}
+
+@media (max-width: 720px) {
+
+  .rowOne {
+    margin-top: 40px;
+    gap: 10px;
+  }
+
+  .description {
+    width: 100%;
+  }
+
 }
