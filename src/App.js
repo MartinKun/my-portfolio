@@ -6,6 +6,7 @@ import ScrollDown from "./components/ScrollDown";
 import ThemeContext from "./context/ThemeContext";
 import About from "./sections/About";
 import Projects from "./sections/Projects";
+
 import Header from "./sections/Header";
 import AnimationContext from "./context/AnimationContext";
 import Contact from "./sections/Contact";
@@ -63,7 +64,7 @@ function App() {
       }
     >
       <Splash />
-      <ScrollDown selectSection={selectSection}/>
+      <ScrollDown selectSection={selectSection} />
       <SocialList />
       <div ref={home}>
         <Header selectSection={selectSection} />
@@ -71,9 +72,11 @@ function App() {
       <div ref={about}>
         <About />
       </div>
-      <div ref={works}>
-        <Projects />
-      </div>
+      {
+        <div ref={works}>
+          <Projects />
+        </div>
+      }
       <div ref={contact}>
         <Contact />
       </div>

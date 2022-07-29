@@ -1,12 +1,12 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import Container from "../../components/Container";
-import ErrorMessage from "../../components/ErrorMessage";
-import Loader from "../../components/Loader";
 import ProjectCard from "../../components/ProjectCard";
 import TitleSection from "../../components/TitleSection";
 import LanguageContext from "../../context/LanguageContext";
 import ThemeContext from "../../context/ThemeContext";
 import { getFeaturedWorks } from "../../service/service";
+import Loader from "../../components/Loader";
+import ErrorMessage from "../../components/ErrorMessage";
 import styles from "./style.module.css";
 
 const Projects = () => {
@@ -20,8 +20,46 @@ const Projects = () => {
     loadingMoreWorks: false,
   });
 
+  const handleClick = () => {
+    setCallBacks((prevState) => ({ ...prevState, loadingMoreWorks: true }));
+    getFeaturedWorks(works.page)
+      .then((response) => {
+        if (response.data.length + works.array.length === works.limitItems) {
+          setWorks((prevState) => ({
+            array: [...prevState.array, ...response.data],
+            page: works.page + 1,
+            limitItems: works.limitItems + 3,
+          }));
+          setIsShowMore(true);
+          setCallBacks((prevState) => ({
+            ...prevState,
+            loadingMoreWorks: false,
+          }));
+        } else {
+          setWorks((prevState) => ({
+            array: [...prevState.array, ...response.data],
+            page: works.page + 1,
+            limitItems: works.limitItems + 3,
+          }));
+          setIsShowMore(false);
+          setCallBacks((prevState) => ({
+            ...prevState,
+            loadingMoreWorks: false,
+          }));
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        setCallBacks((prevState) => ({
+          ...prevState,
+          loadingMoreWorks: false,
+          error: true,
+        }));
+      });
+  };
+
   useEffect(() => {
-    setCallBacks((prevState) => ({...prevState, loadingFirstWorks: true}));
+    setCallBacks((prevState) => ({ ...prevState, loadingFirstWorks: true }));
     getFeaturedWorks(works.page)
       .then((response) => {
         if (response.data.length === works.limitItems) {
@@ -32,7 +70,10 @@ const Projects = () => {
             limitItems: works.limitItems + 3,
           }));
           setIsShowMore(true);
-          setCallBacks((prevState) => ({...prevState, loadingFirstWorks: false}));
+          setCallBacks((prevState) => ({
+            ...prevState,
+            loadingFirstWorks: false,
+          }));
         } else {
           setWorks((prevState) => ({
             ...prevState,
@@ -41,85 +82,71 @@ const Projects = () => {
             limitItems: works.limitItems + 3,
           }));
           setIsShowMore(false);
-          setCallBacks((prevState) => ({...prevState, loadingFirstWorks: false}));
+          setCallBacks((prevState) => ({
+            ...prevState,
+            loadingFirstWorks: false,
+          }));
         }
       })
       .catch((error) => {
         console.log(error);
-        setCallBacks((prevState) => ({...prevState, loadingFirstWorks: false, error: true}));
+        setCallBacks((prevState) => ({
+          ...prevState,
+          loadingFirstWorks: false,
+          error: true,
+        }));
       });
   }, []);
 
-  const handleClick = () => {
-    setCallBacks((prevState) => ({...prevState, loadingMoreWorks: true}));
-    getFeaturedWorks(works.page)
-      .then((response) => {
-        if (response.data.length + works.array.length === works.limitItems) {
-          setWorks((prevState) => ({
-            array: [...prevState.array, ...response.data],
-            page: works.page + 1,
-            limitItems: works.limitItems + 3,
-          }));
-          setIsShowMore(true);
-          setCallBacks((prevState) => ({...prevState, loadingMoreWorks: false}));
-        } else {
-          setWorks((prevState) => ({
-            array: [...prevState.array, ...response.data],
-            page: works.page + 1,
-            limitItems: works.limitItems + 3,
-          }));
-          setIsShowMore(false);
-          setCallBacks((prevState) => ({...prevState, loadingMoreWorks: false}));
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        setCallBacks((prevState) => ({...prevState, loadingMoreWorks: false, error: true}));
-      });
-  };
-
   return (
-    <div className={styles.projectsPage}>
+    <div className={styles.projects}>
       <TitleSection
         title={language.english ? "Works" : "Trabajos"}
         icon={"portfolio"}
       />
-      <div className={styles.wrapper}>
-        <Container>
-          {callbacks.loadingFirstWorks && <Loader type={"page"} />}
-          <div className={styles.projects}>
-            {works.array.map((project, index) => (
-              <ProjectCard project={project} index={index} key={project.id} />
-            ))}
-          </div>
-          <div className={styles.projects}>
-            
-            {isShowMore && (
-              <button
-                className={
-                  isLightOn
-                    ? styles.showMoreBtnLightMode
-                    : styles.showMoreBtnDarkMode
-                }
-                onClick={handleClick}
-              >
-                {callbacks.loadingMoreWorks && 
-                  <span style={{"display":"flex", "alignItems": "center", "margin": "0 auto"}}>
-                    <Loader type={"button"} />
-                    {language.english ? "Loading..." : "Cargando..."}
-                  </span>}
-                  {!callbacks.loadingMoreWorks && (language.english ? (
-                  "Show More"
-                ) : (
-                  "Mostrar Más"
-                ))}
-                
-              </button>
-            )}
-            {callbacks.error && <ErrorMessage />}
-          </div>
-        </Container>
-      </div>
+      <Container>
+        <div className={styles.works}>
+          {callbacks.loadingFirstWorks && (
+            <div style={{ margin: "auto" }}>
+              <Loader type={"page"} />
+            </div>
+          )}
+          {works.array.map((project, index) => (
+            <ProjectCard
+              project={project}
+              orientation={(index + 1) % 2 === 0 ? "left" : "right"}
+              key={project.id}
+            />
+          ))}
+
+          {isShowMore && (
+            <button
+              className={
+                isLightOn
+                  ? styles.showMoreBtnLightMode
+                  : styles.showMoreBtnDarkMode
+              }
+              onClick={handleClick}
+            >
+              {callbacks.loadingMoreWorks && (
+                <span
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                    margin: "0 auto",
+                  }}
+                >
+                  <Loader type={"button"} />
+                  {language.english ? "Loading..." : "Cargando..."}
+                </span>
+              )}
+              {!callbacks.loadingMoreWorks &&
+                (language.english ? "Show More" : "Mostrar Más")}
+            </button>
+          )}
+          {callbacks.error && <ErrorMessage />}
+        </div>
+      </Container>
     </div>
   );
 };

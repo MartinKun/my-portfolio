@@ -53,11 +53,11 @@ const Form = () => {
         name="message"
         placeHolder={language.english ? "Message" : "Mensaje"}
       />
-      {/*<div className={styles.button}>
+      <div className={styles.button}>
         <button type="submit" className={isLightOn ? styles.btnSubmitLightMode : styles.btnSubmitDarkMode}>
           {language.english ? "SEND MESSAGE" : "ENVIAR"}
         </button>
-      </div>*/}
+      </div>
     </form>
   );
 };

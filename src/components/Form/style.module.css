@@ -1,7 +1,7 @@
 .form {
   width: 50%;
   display: grid;
-  grid-template-areas: "name email" "subject subject" "message message";
+  grid-template-areas: "name email" "subject subject" "message message" "button button";
   grid-template-rows: 50px 50px 180px;
   grid-template-columns: 50% 50%;
 
@@ -35,7 +35,6 @@
   grid-area: message;
 }
 
-/*
 .button {
   width: 100%;
   display: flex;
@@ -43,7 +42,7 @@
   justify-content: center;
 
   grid-area: button;
-}*/
+}
 
 .btnSubmitDarkMode {
   transition: 0.2s;
@@ -161,5 +160,9 @@
   .form {
     width: 100%;
     gap: 12px 10px;
+  }
+
+  .button {
+    margin-top: 10px;
   }
 }
