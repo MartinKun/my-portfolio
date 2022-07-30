@@ -42,8 +42,8 @@ const NavBar = (props) => {
           nav.isOnTop
             ? `${isMenuOpened ? styles.navBarMenuOpened : styles.navBar} ${styles.onTop}`
             : nav.isScrolledUp
-            ? `${styles.navBar} ${styles.scrolledUp}`
-            : `${styles.navBar}`
+            ? `${isMenuOpened ? styles.navBarMenuOpened : styles.navBar} ${styles.scrolledUp}`
+            : `${isMenuOpened ? styles.navBarMenuOpened : styles.navBar}`
         }
       >
         <Container>

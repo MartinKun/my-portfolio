@@ -4,7 +4,7 @@
 }
 
 .works {
-  margin: 40px 0;
+  margin: 80px 0;
   min-height: 200px;
   width: 100%;
   display: flex;
@@ -121,7 +121,9 @@
   transform: skewY(-10deg) scale(1, 1);
 }
 
-@media (max-width: 400px) {
+@media (max-width: 800px) {
   .works {
+    margin: 50px 0;
+    gap: 40px;
   }
 }

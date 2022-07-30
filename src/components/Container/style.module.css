@@ -3,3 +3,12 @@
   padding-right: clamp(30px, 2%, 48px);
 }
 
+@media (max-width: 880px) {
+  .container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+
+

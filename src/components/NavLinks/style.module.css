@@ -111,8 +111,8 @@
 @media (max-width: 880px) {
   .navLinks {
     top: 0;
-    width: 55%;
-    min-width: 300px;
+    width: 65%;
+    min-width: 200px;
     position: fixed;
     flex-direction: column;
 
@@ -130,7 +130,7 @@
 
   .closedMenu {
     transition: 0.2s;
-    right: -80%;
+    right: -100%;
   }
 
   .navLinksLightMode {

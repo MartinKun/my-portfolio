@@ -1,3 +1,157 @@
+.hand {
+  width: 200px;
+  z-index: 4;
+  position: absolute;
+  transform: rotate(200deg);
+  bottom: 60px;
+  right: 20px;
+  width: 100px;
+  
+  opacity: 0;
+}
+
+.animatedHand {
+  animation: pressButton 5s infinite ease-out;
+}
+
+@keyframes pressButton {
+  0% {
+    opacity: 0%;
+    bottom: 60px;
+    right: 20px;
+  }
+
+  10% {
+    bottom: 30px;
+    right: 35px;
+  }
+
+  20% {
+    bottom: 60px;
+    right: 20px;
+  }
+
+  30% {
+    opacity: 100%;
+    bottom: 30px;
+    right: 35px;
+  }
+
+  40% {
+    bottom: 60px;
+    right: 20px;
+  }
+
+  50% {
+    opacity: 100%;
+    bottom: 30px;
+    right: 35px;
+  }
+  65%{
+    opacity: 0%;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    bottom: 60px;
+    right: 20px;
+    opacity: 0;
+  }
+}
+
+@keyframes pressButton2 {
+  0% {
+    opacity: 0%;
+    bottom: 50px;
+    right: 0px;
+  }
+
+  10% {
+    bottom: 10px;
+    right: 25px;
+  }
+
+  20% {
+    bottom: 50px;
+    right: 0px;
+  }
+
+  30% {
+    opacity: 100%;
+    bottom: 10px;
+    right: 25px;
+  }
+
+  40% {
+    bottom: 50px;
+    right: 0px;
+  }
+
+  50% {
+    opacity: 100%;
+    bottom: 10px;
+    right: 25px;
+  }
+  65%{
+    opacity: 0%;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    bottom: 50px;
+    right: 0px;
+    opacity: 0;
+  }
+}
+
+@keyframes pressButton3 {
+  0% {
+    opacity: 0%;
+    bottom: 30px;
+    right: 0px;
+  }
+
+  10% {
+    bottom: -20px;
+    right: 15px;
+  }
+
+  20% {
+    bottom: 30px;
+    right: 0px;
+  }
+
+  30% {
+    opacity: 100%;
+    bottom: -20px;
+    right: 15px;
+  }
+
+  40% {
+    bottom: 30px;
+    right: 0px;
+  }
+
+  50% {
+    opacity: 100%;
+    bottom: -20px;
+    right: 15px;
+  }
+  65%{
+    opacity: 0%;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    bottom: 30px;
+    right: 0px;
+    opacity: 0;
+  }
+}
+
 .roomContainer {
   width: 726px;
   height: 643px;
@@ -51,6 +205,7 @@
   bottom: 45px;
   right: 60px;
   transform: rotate(-63deg);
+  z-index: 4;
 }
 
 @keyframes lightOn1 {
@@ -94,6 +249,11 @@
 }
 
 @media (max-width: 1500px) {
+
+  .animatedHand {
+    animation: pressButton2 5s infinite ease-out;
+  }
+
   .roomContainer {
     width: 600px;
     height: 531.4px;
@@ -158,6 +318,21 @@
 }
 
 @media (max-width: 1300px) {
+
+  .animatedHand {
+    animation: pressButton3 5s infinite ease-out;
+  }
+
+  .hand {
+    width: 200px;
+    z-index: 4;
+    position: absolute;
+    transform: rotate(200deg);
+    bottom: 60px;
+    right: 20px;
+    width: 80px;
+  }
+
   .roomContainer {
     width: 500px;
     height: 442.86px;
@@ -286,6 +461,11 @@
 }
 
 @media (max-width: 520px) {
+
+  .animatedHand {
+    animation: none;
+  }
+
   .roomContainer {
     width: 300px;
     height: 265.7px;
@@ -327,5 +507,59 @@
     width: calc(6 * 300px);
     animation: appearRoom 0.2s forwards 3.2s;
   }
-  
+}
+
+@keyframes lightOn6 {
+  0% {
+    left: 0px;
+  }
+
+  100% {
+    left: -1250px;
+  }
+}
+
+@keyframes lightOff6 {
+  0% {
+    left: -1250px;
+  }
+
+  100% {
+    left: 0px;
+  }
+}
+
+@media (max-width: 400px) {
+  .roomContainer {
+    width: 250px;
+    height: 221.4167px;
+  }
+  .room {
+    width: calc(6 * 250px);
+    height: 221.4167px;
+  }
+  .room.lightOn {
+    left: -1250px;
+  }
+
+  .room.lightOff {
+    left: 0;
+  }
+
+  .room.lightAnimatedOn {
+    left: 0px;
+    animation: lightOn6 0.05s steps(5) forwards;
+  }
+
+  .room.lightAnimatedOff {
+    left: -1250px;
+    animation: lightOff6 0.05s steps(5) forwards;
+  }
+
+  .roomAppear {
+    height: 221.4167px;
+    opacity: 2%;
+    width: calc(6 * 250px);
+    animation: appearRoom 0.2s forwards 3.2s;
+  }
 }

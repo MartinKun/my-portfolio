@@ -1,5 +1,6 @@
 import styles from "./style.module.css";
 import { ReactComponent as RoomSprites } from "../../assets/room-sprites1.svg";
+import { ReactComponent as Hand } from "../../assets/hand.svg";
 import { useContext, useEffect, useState } from "react";
 import ThemeContext from "../../context/ThemeContext";
 import AnimationContext from "../../context/AnimationContext";
@@ -32,6 +33,8 @@ const Room = () => {
 
   return (
     <div className={styles.roomContainer}>
+      <Hand className={(isAnimatedFinished && !isLightOn) ? `${styles.hand} ${styles.animatedHand}` : styles.hand} />
+
       <RoomSprites
         className={
           isClickOnSwitch
@@ -40,9 +43,12 @@ const Room = () => {
               : `${styles.room} ${styles.lightAnimatedOff}`
             : isLightOn
             ? `${styles.room}  ${styles.lightOn}`
-            : `${isAnimatedFinished ? styles.room : styles.roomAppear}  ${styles.lightOff}`
+            : `${isAnimatedFinished ? styles.room : styles.roomAppear}  ${
+                styles.lightOff
+              }`
         }
       />
+
       <div className={styles.clickArea} onClick={handleClick}></div>
     </div>
   );
