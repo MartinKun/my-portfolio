@@ -1,20 +1,25 @@
 @import url("https://fonts.googleapis.com/css?family=Oswald");
 
+.wrapper{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .scrollDown {
   position: fixed;
   flex-direction: column;
-  bottom: 0;
+  bottom: 5px;
 
-  right: 20px;
   z-index: 2;
+  
 }
 
 .scrollDownAppear {
   position: fixed;
   flex-direction: column;
-  bottom: 0;
+  bottom: 5px;
 
-  right: 20px;
   z-index: 2;
   opacity: 0;
   animation: appearScroll 0.2s forwards 3.6s;
@@ -143,4 +148,26 @@
 .zoomIn {
   -webkit-animation-name: zoomIn;
   animation-name: zoomIn;
+}
+
+@media (max-width: 1750px) {
+  .wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .scrollDown {
+    right: initial;
+  }
+
+  .scrollDownAppear {
+    right: initial;
+  }
+}
+
+@media (max-width: 950px) {
+  .wrapper{
+    display: none;
+  }
 }

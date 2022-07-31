@@ -6,6 +6,7 @@ import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "./context/ThemeContext";
 import { LanguageProvider } from "./context/LanguageContext";
 import { AnimationProvider } from "./context/AnimationContext";
+import { ScrollRevealProvider } from "./context/ScrollRevealContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -13,7 +14,9 @@ root.render(
     <AnimationProvider>
       <LanguageProvider>
         <ThemeProvider>
-          <App />
+          <ScrollRevealProvider>
+            <App />
+          </ScrollRevealProvider>
         </ThemeProvider>
       </LanguageProvider>
     </AnimationProvider>

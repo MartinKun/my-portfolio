@@ -15,8 +15,10 @@ import CssLogo from "../../components/Logos/CssLogo";
 import JsLogo from "../../components/Logos/JsLogo";
 import ReactLogo from "../../components/Logos/ReactLogo";
 import GitLogo from "../../components/Logos/GitLogo";
+import ScrollRevealContext from "../../context/ScrollRevealContext";
 
 const About = () => {
+  const { reveal } = useContext(ScrollRevealContext);
   const { isLightOn } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
 
@@ -28,6 +30,7 @@ const About = () => {
       />
       <Container>
         <div className={styles.wrapper}>
+          { reveal.description &&
           <div className={styles.rowOne}>
             <DinamicPortrait />
             <p
@@ -42,6 +45,8 @@ const About = () => {
                 : "Siempre sentí curiosidad por el mundo de la programación. Así, comencé una tecnicatura en la ciudad de Chivilcoy donde terminé interesándome, principalmente, por el desarrollo front-end. Desde entonces, busco capacitarme continuamente realizando cursos e incorporando nuevas tecnologías con el objetivo de mejorar tanto profesional como personalmente cada día."}
             </p>
           </div>
+          }
+          { reveal.techs &&
           <div className={styles.rowTwo}>
             <Subtitle
               title={language.english ? "Technologies" : "Tecnologías"}
@@ -97,6 +102,7 @@ const About = () => {
               </div>
             </div>
           </div>
+          }
         </div>
       </Container>
     </div>

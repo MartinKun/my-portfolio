@@ -8,8 +8,10 @@ import { getFeaturedWorks } from "../../service/service";
 import Loader from "../../components/Loader";
 import ErrorMessage from "../../components/ErrorMessage";
 import styles from "./style.module.css";
+import ScrollRevealContext from "../../context/ScrollRevealContext";
 
 const Projects = () => {
+  const { reveal } = useContext(ScrollRevealContext);
   const { isLightOn } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
   const [works, setWorks] = useState({ array: [], page: 0, limitItems: 3 });
@@ -105,6 +107,7 @@ const Projects = () => {
         icon={"portfolio"}
       />
       <Container>
+        { reveal.works &&
         <div className={styles.works}>
           {callbacks.loadingFirstWorks && (
             <div style={{ margin: "auto" }}>
@@ -146,6 +149,7 @@ const Projects = () => {
           )}
           {callbacks.error && <ErrorMessage />}
         </div>
+        }
       </Container>
     </div>
   );

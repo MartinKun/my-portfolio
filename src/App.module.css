@@ -13,6 +13,10 @@
   animation: toLightMode 0.05s steps(5) forwards;
 }
 
+.scrollStopped {
+  overflow: hidden;
+}
+
 @keyframes toLightMode {
   0% {
     background: #021430;

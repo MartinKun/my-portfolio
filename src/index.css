@@ -1,25 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Michroma&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap");
 
 :root {
   --font-title: "Raleway", sans-serif;
   --font-title-secondary: "Michroma", sans-serif;
   --font-description: "Josefin Sans", sans-serif;
-  --font-techs: 'Ubuntu Mono', monospace;
+  --font-techs: "Ubuntu Mono", monospace;
 
   --background-lightmode: #f4f7fc;
-  --background-darkmode:#021430;
+  --background-darkmode: #021430;
 
   --background-menu-lightmode: #c09256;
-  --background-menu-darkmode: #243758; 
+  --background-menu-darkmode: #243758;
 
   --color-blue-light: #0979b0;
 
   --text-color-lightmode: #000000;
   --text-color-darkmode: #f4f7fc;
-  
 }
 
 * {
@@ -27,5 +26,28 @@
   padding: 0;
   list-style: none;
   box-sizing: border-box;
+  
+}
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(179,179,179);
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  
+}
+
+a {
+  text-decoration: none;
+  cursor: default;
+  color: inherit; /* blue colors for links too */
+  text-decoration: inherit; /* no underline */
 }

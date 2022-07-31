@@ -11,6 +11,10 @@
   gap: calc(1.5vw + 32px);
 }
 
+a:hover {
+  color: var(--color-blue-light);
+}
+
 .current {
   color: var(--color-blue-light);
 }
@@ -75,7 +79,7 @@
   animation: dropLink 0.2s ease-out 3.3s;
   animation-fill-mode: forwards;
 }
-.projectsAnimated {
+.worksAnimated {
   opacity: 0;
   animation: dropLink 0.2s ease-out 3.35s;
   animation-fill-mode: forwards;
