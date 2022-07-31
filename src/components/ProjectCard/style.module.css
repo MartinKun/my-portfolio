@@ -75,6 +75,7 @@
   background-color: rgba(42, 69, 85, 0.95);
   padding: 15px;
   border-radius: 4px;
+  white-space: pre-wrap;
 }
 
 .textDarkMode {
