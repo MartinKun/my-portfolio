@@ -5,10 +5,12 @@ import { useContext, useState, useEffect } from "react";
 import ThemeContext from "../../context/ThemeContext";
 import AnimationContext from "../../context/AnimationContext";
 import ScrollRevealContext from "../../context/ScrollRevealContext";
+import LanguageContext from "../../context/LanguageContext";
 
 const ScrollDown = (props) => {
   const { isAnimatedFinished } = useContext(AnimationContext);
   const { isLightOn } = useContext(ThemeContext);
+  const { language } = useContext(LanguageContext);
 
   const [scroll, setScroll] = useState(0);
   const [isShowing, setIsShowing] = useState(true);
@@ -50,7 +52,7 @@ const ScrollDown = (props) => {
                     : `${styles.scrollDownText} ${styles.scrollDownTextDarkMode}`
                 }
               >
-                SCROLL DOWN
+                {language.english ? "SCROLL DOWN" : "HACIA ABAJO"}
               </div>
               <div
                 class={`${styles.arrowContainer} ${styles.animated} ${styles.fadeInDown}`}
