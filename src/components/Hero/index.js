@@ -7,11 +7,17 @@ import LetterSpacingBox from "../LetterSpacingBox";
 import PdfLogo from "../Logos/PdfLogo";
 import Room from "../Room";
 import styles from "./style.module.css";
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
   const { isAnimatedFinished } = useContext(AnimationContext);
   const { isLightOn } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/resume_pdf');
+  }
 
   return (
     <div className={styles.hero}>
@@ -36,6 +42,7 @@ const Hero = () => {
               />
 
               <button
+              onClick={handleClick}
                 className={
                   isLightOn ? styles.resumeLightMode : `${isAnimatedFinished ? styles.resumeDarkMode : styles.resumeAppear}`
                 }

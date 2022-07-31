@@ -1,0 +1,39 @@
+.app {
+    width: 100%;
+    min-height: 100vh;
+  }
+  
+  .app.darkMode {
+    background-color: rgb(244, 247, 252);
+    animation: toDarkMode 0.05s steps(5) forwards;
+  }
+  
+  .app.lightMode {
+    background-color: #021430;
+    animation: toLightMode 0.05s steps(5) forwards;
+  }
+  
+  .scrollStopped {
+    overflow: hidden;
+  }
+  
+  @keyframes toLightMode {
+    0% {
+      background: #021430;
+    }
+  
+    100% {
+      background: rgb(244, 247, 252);
+    }
+  }
+  
+  @keyframes toDarkMode {
+    0% {
+      background: rgb(244, 247, 252);
+    }
+  
+    100% {
+      background: #021430;
+    }
+  }
+  

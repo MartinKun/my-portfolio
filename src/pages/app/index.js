@@ -1,17 +1,17 @@
 import { useContext, useEffect, useRef, useState } from "react";
-import styles from "./App.module.css";
-import Splash from "./components/Splash";
-import SocialList from "./components/SocialList";
-import ScrollDown from "./components/ScrollDown";
-import ThemeContext from "./context/ThemeContext";
-import About from "./sections/About";
-import Projects from "./sections/Projects";
+import styles from "./style.module.css";
+import Splash from "../../components/Splash";
+import SocialList from "../../components/SocialList";
+import ScrollDown from "../../components/ScrollDown";
+import ThemeContext from "../../context/ThemeContext";
+import About from "../../sections/About";
+import Projects from "../../sections/Projects";
 
-import Header from "./sections/Header";
-import AnimationContext from "./context/AnimationContext";
-import Contact from "./sections/Contact";
-import Footer from "./sections/Footer";
-import ScrollRevealContext from "./context/ScrollRevealContext";
+import Header from "../../sections/Header";
+import AnimationContext from "../../context/AnimationContext";
+import Contact from "../../sections/Contact";
+import Footer from "../../sections/Footer";
+import ScrollRevealContext from "../../context/ScrollRevealContext";
 
 function App() {
   const { reveal, setReveal } = useContext(ScrollRevealContext);
@@ -107,13 +107,12 @@ function App() {
   };
 
   useEffect(() => {
-    if(!isAnimatedFinished){
+    if (!isAnimatedFinished) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "visible";
     }
-    
-  }, [isAnimatedFinished])
+  }, [isAnimatedFinished]);
 
   return (
     <div

@@ -1,29 +1,30 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
+import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import App from "./pages/app";
 import { ThemeProvider } from "./context/ThemeContext";
 import { LanguageProvider } from "./context/LanguageContext";
 import { AnimationProvider } from "./context/AnimationContext";
 import { ScrollRevealProvider } from "./context/ScrollRevealContext";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
-  <React.StrictMode>
+import ResumePdf from "./pages/resume";
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+ReactDOM.render(
+  <BrowserRouter>
     <AnimationProvider>
       <LanguageProvider>
         <ThemeProvider>
           <ScrollRevealProvider>
-            <App />
+            <Routes>
+              <Route path="/" element={<App />} />
+              <Route path="/resume_pdf" element={<ResumePdf />} />
+            </Routes>
           </ScrollRevealProvider>
         </ThemeProvider>
       </LanguageProvider>
     </AnimationProvider>
-  </React.StrictMode>
+  </BrowserRouter>,
+  document.getElementById("root")
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
