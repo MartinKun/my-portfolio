@@ -41,6 +41,7 @@
   line-height: 30px;
   font-weight: 300;
   font-family: var(--font-description);
+  white-space: pre-wrap;
 }
 
 .descriptionDarkMode {
