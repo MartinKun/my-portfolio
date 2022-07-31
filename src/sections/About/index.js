@@ -41,8 +41,8 @@ const About = () => {
               }
             >
               {language.english
-                ? "I have always been curious about programming. Thus, I started a technical career in the city of Chivilcoy where I ended up being mainly interested in front-end development. Since then, I am constantly seeking training by taking courses and learning new technologies with the aim of improving both professionally and personally every day."
-                : "Siempre sentí curiosidad por el mundo de la programación. Así, comencé una tecnicatura en la ciudad de Chivilcoy donde terminé interesándome, principalmente, por el desarrollo front-end. Desde entonces, busco capacitarme continuamente realizando cursos e incorporando nuevas tecnologías con el objetivo de mejorar tanto profesional como personalmente cada día."}
+                ? "I develop backend tasks for web, mobile and desktop applications, mainly programming in Java which was my first programming language that i have learned a few years ago.\nTo a lesser extent, I also do frontend works with the objetive that the user experience will be as complete and satisfying as possible.\nI'm a self-taught developer with the objective of continuously improving myself and learn new skills that lead to professional and personal growth. If you have some interesting idea to share with me, do not hesitate to get in touch!"
+                : `Desarrollo tareas de backend para aplicaciones web, móviles y de escritorio programando mayormente en Java, el cual fue mi primer lenguaje de programación aprendido hace ya algunos años.\nAunque en menor medida, también realizo trabajos de frontend siempre buscando que la experiencia de usuario sea lo más completa y satisfactoria posible.\nSoy un programador autodidacta que busca continuamente superarse y aprender nuevas habilidades que me ayuden a crecer tanto profesional como personalmente. Si tienes alguna idea interesante que desees compartir conmigo, no dudes en contactarme!`}
             </p>
           </div>
           }
