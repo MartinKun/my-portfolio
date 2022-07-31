@@ -1,18 +1,20 @@
 import { useContext, useState } from "react";
 import ThemeContext from "../../../context/ThemeContext";
 import LogoContainer from "../../LogoContainer";
+import Overlay from "../../Overlay";
 import styles from "./style.module.css";
 
 const ReactLogo = () => {
   const { isLightOn } = useContext(ThemeContext);
   const [isMouseEnter, setIsMouseEnter] = useState(false);
   return (
+    <>
     <LogoContainer>
       <svg
+      id={"reactjs"}
         onMouseEnter={() => setIsMouseEnter(true)}
         onMouseLeave={() => setIsMouseEnter(false)}
         className={styles.reactLogo}
-        id="Layer_2"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 3618.6 3618.6"
         width="15em"
@@ -80,6 +82,8 @@ const ReactLogo = () => {
         />
       </svg>
     </LogoContainer>
+      <Overlay id={"reactjs"} title={"React"} />
+      </>
   );
 };
 

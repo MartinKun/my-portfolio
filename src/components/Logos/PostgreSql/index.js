@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import ThemeContext from "../../../context/ThemeContext";
 import LogoContainer from "../../LogoContainer";
+import Overlay from "../../Overlay";
 import styles from "./style.module.css";
 
 const PostgreSql = () => {
@@ -10,6 +11,7 @@ const PostgreSql = () => {
   return (
     <LogoContainer>
       <svg
+      id={"postgresql"}
         onMouseEnter={() => setIsMouseEnter(true)}
         onMouseLeave={() => setIsMouseEnter(false)}
         className={styles.postgreSqlLogo}
@@ -78,6 +80,7 @@ const PostgreSql = () => {
           d="M84.371 117.744c1.014.624 2.496 1.144 4.056 1.144 2.314 0 3.666-1.222 3.666-2.99 0-1.638-.936-2.574-3.302-3.484-2.86-1.014-4.628-2.496-4.628-4.966 0-2.73 2.262-4.758 5.668-4.758 1.794 0 3.094.416 3.874.858l-.624 1.846c-.572-.312-1.742-.832-3.328-.832-2.392 0-3.302 1.43-3.302 2.626 0 1.638 1.065 2.444 3.484 3.38 2.964 1.145 4.472 2.574 4.472 5.148 0 2.704-2.002 5.044-6.136 5.044-1.69 0-3.536-.494-4.473-1.118l.573-1.898zM111.957 123.074c-2.366-.624-4.68-1.326-6.708-2.028-.364-.13-.728-.26-1.066-.26-4.16-.156-7.722-3.224-7.722-8.866 0-5.616 3.432-9.23 8.164-9.23 4.758 0 7.853 3.692 7.853 8.866 0 4.498-2.08 7.384-4.992 8.398v.104c1.742.442 3.64.858 5.122 1.118l-.651 1.898zm-1.872-11.414c0-3.51-1.819-7.125-5.538-7.125-3.822 0-5.694 3.536-5.668 7.333-.026 3.718 2.028 7.072 5.564 7.072 3.615 0 5.642-3.276 5.642-7.28zM115.414 102.976h2.263v15.626h7.488v1.898h-9.751v-17.524z"
         />
       </svg>
+      <Overlay id={"postgresql"} title={"PostgreSQL"} />
     </LogoContainer>
   );
 };

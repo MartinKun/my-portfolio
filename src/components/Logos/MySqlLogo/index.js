@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import ThemeContext from "../../../context/ThemeContext";
 import LogoContainer from "../../LogoContainer";
+import Overlay from "../../Overlay";
 import styles from "./style.module.css";
 
 const MySqlLogo = () => {
@@ -11,6 +12,7 @@ const MySqlLogo = () => {
     <LogoContainer>
       <div className={styles.wrap}>
         <svg
+        id="mysql"
           onMouseOver={() => setIsMouseEnter(true)}
           onMouseLeave={() => setIsMouseEnter(false)}
           className={styles.mysqlLogo}
@@ -60,6 +62,7 @@ const MySqlLogo = () => {
           />
         </svg>
       </div>
+        <Overlay id={"mysql"} title={"Mysql"} />
     </LogoContainer>
   );
 };

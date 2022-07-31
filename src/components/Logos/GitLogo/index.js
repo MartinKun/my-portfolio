@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import ThemeContext from "../../../context/ThemeContext";
 import LogoContainer from "../../LogoContainer";
+import Overlay from "../../Overlay";
 import styles from "./style.module.css";
 
 const GitLogo = () => {
@@ -10,13 +11,13 @@ const GitLogo = () => {
   return (
     <LogoContainer>
       <svg
+        id="git"
         onMouseEnter={() => setIsMouseEnter(true)}
         onMouseLeave={() => setIsMouseEnter(false)}
         className={styles.gitLogo}
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
         version="1.1"
-        id="Layer_1"
         x="0px"
         y="0px"
         width="97px"
@@ -38,6 +39,7 @@ const GitLogo = () => {
           />
         </g>
       </svg>
+      <Overlay id={"git"} title={"Git"}/>
     </LogoContainer>
   );
 };

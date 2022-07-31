@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import ThemeContext from "../../../context/ThemeContext";
 import LogoContainer from "../../LogoContainer";
+import Overlay from "../../Overlay";
 import styles from "./style.module.css";
 
 const JsLogo = () => {
@@ -10,6 +11,7 @@ const JsLogo = () => {
   return (
     <LogoContainer>
       <svg
+      id="js"
         onMouseEnter={() => setIsMouseEnter(true)}
         onMouseLeave={() => setIsMouseEnter(false)}
         className={styles.jsLogo}
@@ -30,6 +32,8 @@ const JsLogo = () => {
           fill="#ffffff"
         />
       </svg>
+      <Overlay id={"js"} title={"Javascript"} />
+
     </LogoContainer>
   );
 };

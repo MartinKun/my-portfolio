@@ -1,6 +1,9 @@
+
+
 .reactLogo {
     transition: 0.2s ease-out;
     width: 4.0625em;
+    height: 5.0625em;
 }
 
 .reactLogo:hover {
