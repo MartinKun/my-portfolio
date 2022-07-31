@@ -8,7 +8,7 @@
   -webkit-backdrop-filter: blur(5.9px);
 
   transition: 0.5s;
-  z-index: 2;
+  z-index: 5;
   overflow: hidden;
 }
 

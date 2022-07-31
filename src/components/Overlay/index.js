@@ -12,7 +12,7 @@ const Overlay = (props) => {
     target={props.id}
     toggle={toggle}
   >
-    <div style={{"background":"#ffffff", "marginTop": "15px", "padding":"1px"}}>{props.title}</div>
+    <div style={{"background":"#e2caae","color":"#000000", "marginTop": "15px", "padding":"2px 4px", "borderRadius":"2px"}}>{props.title}</div>
   </Tooltip>
   )
 }
