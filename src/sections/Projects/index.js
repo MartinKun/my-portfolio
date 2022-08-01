@@ -14,7 +14,7 @@ const Projects = () => {
   const { reveal } = useContext(ScrollRevealContext);
   const { isLightOn } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
-  const [works, setWorks] = useState({ array: [], page: 0, limitItems: 4 });
+  const [works, setWorks] = useState({ array: [], page: 0, limitItems: 0 });
   const [isShowMore, setIsShowMore] = useState(false);
   const [callbacks, setCallBacks] = useState({
     error: false,
@@ -26,12 +26,14 @@ const Projects = () => {
     setCallBacks((prevState) => ({ ...prevState, loadingMoreWorks: true }));
     getFeaturedWorks(works.page)
       .then((response) => {
-
-        if (response.data.length + works.array.length === works.limitItems) {
+        if (
+          response.data.length + works.array.length ===
+          works.limitItems + 4
+        ) {
           setWorks((prevState) => ({
             array: [...prevState.array, ...response.data],
             page: works.page + 1,
-            limitItems: works.limitItems + 3,
+            limitItems: works.limitItems + 4,
           }));
           setIsShowMore(true);
           setCallBacks((prevState) => ({
@@ -42,7 +44,7 @@ const Projects = () => {
           setWorks((prevState) => ({
             array: [...prevState.array, ...response.data],
             page: works.page + 1,
-            limitItems: works.limitItems + 3,
+            limitItems: works.limitItems + 4,
           }));
           setIsShowMore(false);
           setCallBacks((prevState) => ({
@@ -65,12 +67,12 @@ const Projects = () => {
     setCallBacks((prevState) => ({ ...prevState, loadingFirstWorks: true }));
     getFeaturedWorks(works.page)
       .then((response) => {
-        if (response.data.length === works.limitItems) {
+        if (response.data.length === works.limitItems + 4) {
           setWorks((prevState) => ({
             ...prevState,
             array: response.data,
             page: works.page + 1,
-            limitItems: works.limitItems + 3,
+            limitItems: works.limitItems + 4,
           }));
           setIsShowMore(true);
           setCallBacks((prevState) => ({
@@ -82,7 +84,7 @@ const Projects = () => {
             ...prevState,
             array: response.data,
             page: works.page + 1,
-            limitItems: works.limitItems + 3,
+            limitItems: works.limitItems + 4,
           }));
           setIsShowMore(false);
           setCallBacks((prevState) => ({
@@ -108,49 +110,53 @@ const Projects = () => {
         icon={"portfolio"}
       />
       <Container>
-        { reveal.works &&
-        <div className={styles.works}>
-          {callbacks.loadingFirstWorks && (
-            <div style={{ margin: "auto" }}>
-              <Loader type={"page"} />
-            </div>
-          )}
-          {works.array.map((project, index) => (
-            <ProjectCard
-              project={project}
-              orientation={(index + 1) % 2 === 0 ? "left" : "right"}
-              key={project.id}
-            />
-          ))}
+        {reveal.works && (
+          <div className={styles.works}>
+            {callbacks.loadingFirstWorks && (
+              <div style={{ margin: "auto" }}>
+                <Loader type={"page"} />
+              </div>
+            )}
+            {works.array.map((project, index) => (
 
-          {isShowMore && (
-            <button
-              className={
-                isLightOn
-                  ? styles.showMoreBtnLightMode
-                  : styles.showMoreBtnDarkMode
-              }
-              onClick={handleClick}
-            >
-              {callbacks.loadingMoreWorks && (
-                <span
-                  style={{
-                    display: "flex",
-                    alignItems: "center",
-                    margin: "0 auto",
-                  }}
-                >
-                  <Loader type={"button"} />
-                  {language.english ? "Loading..." : "Cargando..."}
-                </span>
-              )}
-              {!callbacks.loadingMoreWorks &&
-                (language.english ? "Show More" : "Mostrar Más")}
-            </button>
-          )}
-          {callbacks.error && <ErrorMessage />}
-        </div>
-        }
+              works.limitItems === works.array.length && index + 1 === works.limitItems ? <></> :
+                <ProjectCard
+                project={project}
+                orientation={(index + 1) % 2 === 0 ? "left" : "right"}
+                key={project.id}
+              />
+              
+              
+            ))}
+
+            {isShowMore && (
+              <button
+                className={
+                  isLightOn
+                    ? styles.showMoreBtnLightMode
+                    : styles.showMoreBtnDarkMode
+                }
+                onClick={handleClick}
+              >
+                {callbacks.loadingMoreWorks && (
+                  <span
+                    style={{
+                      display: "flex",
+                      alignItems: "center",
+                      margin: "0 auto",
+                    }}
+                  >
+                    <Loader type={"button"} />
+                    {language.english ? "Loading..." : "Cargando..."}
+                  </span>
+                )}
+                {!callbacks.loadingMoreWorks &&
+                  (language.english ? "Show More" : "Mostrar Más")}
+              </button>
+            )}
+            {callbacks.error && <ErrorMessage />}
+          </div>
+        )}
       </Container>
     </div>
   );

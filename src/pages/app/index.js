@@ -87,20 +87,27 @@ function App() {
         scrollTo(about);
         break;
       case "works":
-        setReveal((prevState) => ({ ...prevState, about: true }));
-        scrollTo(works);
+        if(!reveal.about){
+          setReveal((prevState) => ({ ...prevState, about: true }));
+        }
+          scrollTo(works);
+        
         break;
       case "contact":
-        setReveal((prevState) => ({ ...prevState, about: true, works: true }));
+        if(!reveal.about && !reveal.works){
+          setReveal((prevState) => ({ ...prevState, about: true, works: true }));
+        }
         scrollTo(contact);
         break;
       case "footer":
+        if(!reveal.about && !reveal.works && !reveal.contact){
         setReveal((prevState) => ({
           ...prevState,
           about: true,
           works: true,
           contact: true,
         }));
+      }
         scrollTo(footer);
         break;
     }
