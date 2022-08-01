@@ -14,7 +14,7 @@ const Projects = () => {
   const { reveal } = useContext(ScrollRevealContext);
   const { isLightOn } = useContext(ThemeContext);
   const { language } = useContext(LanguageContext);
-  const [works, setWorks] = useState({ array: [], page: 0, limitItems: 3 });
+  const [works, setWorks] = useState({ array: [], page: 0, limitItems: 4 });
   const [isShowMore, setIsShowMore] = useState(false);
   const [callbacks, setCallBacks] = useState({
     error: false,
@@ -26,6 +26,7 @@ const Projects = () => {
     setCallBacks((prevState) => ({ ...prevState, loadingMoreWorks: true }));
     getFeaturedWorks(works.page)
       .then((response) => {
+
         if (response.data.length + works.array.length === works.limitItems) {
           setWorks((prevState) => ({
             array: [...prevState.array, ...response.data],
